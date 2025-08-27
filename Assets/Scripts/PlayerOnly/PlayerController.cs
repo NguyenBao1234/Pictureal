@@ -4,9 +4,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("References")]
-    public Camera playerCamera;
-
     [Header("Movement Settings")]
     public float walkSpeed = 3f;
     public float runSpeed = 6f;
@@ -16,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float airControlPercent = 0.5f;
 
     [Header("Look Settings")]
+    public Transform cameraHolder;
     public float lookSpeed = 2f;
     public float lookXLimit = 85f;
 
@@ -170,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
         rotationX += -lookInput.y * lookSpeed * 0.1f;
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        cameraHolder.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, lookInput.x * lookSpeed * 0.1f, 0);
     }
     
@@ -178,9 +176,9 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Attempting interaction");
         // vị trí trung tâm của box (trước mặt playerCamera)
-        Vector3 center = playerCamera.transform.position + playerCamera.transform.forward * interactDistance;
+        Vector3 center = cameraHolder.position + cameraHolder.forward * interactDistance;
         // quét các collider trong box
-        Collider[] hits = Physics.OverlapBox(center, boxHalfExtents, playerCamera.transform.rotation, interactLayer);
+        Collider[] hits = Physics.OverlapBox(center, boxHalfExtents, cameraHolder.rotation, interactLayer);
         foreach (var hit in hits)
         {
             // kiểm tra xem object có implement IInteractable không
@@ -197,10 +195,9 @@ public class PlayerController : MonoBehaviour
     // Debug hiển thị box trong Scene View
     private void OnDrawGizmosSelected()
     {
-        if (playerCamera == null) return;
         Gizmos.color = Color.cyan;
-        Vector3 center = playerCamera.transform.position + playerCamera.transform.forward * interactDistance;
-        Gizmos.matrix = Matrix4x4.TRS(center, playerCamera.transform.rotation, Vector3.one);
+        Vector3 center = cameraHolder.position + cameraHolder.forward * interactDistance;
+        Gizmos.matrix = Matrix4x4.TRS(center, cameraHolder.rotation, Vector3.one);
         Gizmos.DrawWireCube(Vector3.zero, boxHalfExtents * 2f);
     }
 }

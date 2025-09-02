@@ -14,12 +14,12 @@ public class CollisionChecker : MonoBehaviour
         
     }
     [HideInInspector]
-    public CustomFrustumLocalSpace frustumLocalSpace;
+    public FrustumCutHandler frustumCutHandler;
     [HideInInspector]
     public int side;
 
     void OnTriggerEnter(Collider other) {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Cuttable"))
-            frustumLocalSpace.AddObjectToCut(other.gameObject, side);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Default"))
+            frustumCutHandler.AddObjectToCut(other.gameObject, side);
     }
 }

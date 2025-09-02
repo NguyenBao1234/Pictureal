@@ -18,8 +18,8 @@ public class CollisionChecker : MonoBehaviour
     [HideInInspector]
     public int side;
 
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Default"))
-            frustumCutHandler.AddObjectToCut(other.gameObject, side);
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Default")) frustumCutHandler.AddObjectToCut(other.gameObject, side);
     }
 }

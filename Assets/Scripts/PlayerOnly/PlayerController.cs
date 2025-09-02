@@ -174,20 +174,17 @@ public class PlayerController : MonoBehaviour
     
     public void AttemptInteract()
     {
-        Debug.Log("Attempting interaction");
-        // vị trí trung tâm của box (trước mặt playerCamera)
         Vector3 center = cameraHolder.position + cameraHolder.forward * interactDistance;
-        // quét các collider trong box
         Collider[] hits = Physics.OverlapBox(center, boxHalfExtents, cameraHolder.rotation, interactLayer);
         foreach (var hit in hits)
         {
-            // kiểm tra xem object có implement IInteractable không
+            // check if object implement IInteractable
             IInteractable interactable = hit.GetComponent<IInteractable>();
             if (interactable != null)
             {
                 Debug.Log(hit.name);
-                interactable.Interact(gameObject); // gọi hàm Interact
-                break; // chỉ tương tác 1 object đầu tiên tìm thấy
+                interactable.Interact(gameObject);
+                break;
             }
         }
     }

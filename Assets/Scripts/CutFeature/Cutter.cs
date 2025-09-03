@@ -51,7 +51,7 @@ public class Cutter : MonoBehaviour
 
         //Right Mesh is the cut part
         GameObject rightMeshObj = new GameObject();
-        rightMeshObj.transform.position = originalGameObject.transform.position + (Vector3.up * .05f);
+        rightMeshObj.transform.position = originalGameObject.transform.position;
         rightMeshObj.transform.rotation = originalGameObject.transform.rotation;
         rightMeshObj.transform.localScale = originalGameObject.transform.localScale;
         rightMeshObj.AddComponent<MeshRenderer>();

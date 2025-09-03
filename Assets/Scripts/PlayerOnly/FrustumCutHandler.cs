@@ -51,6 +51,11 @@ public class FrustumCutHandler : MonoBehaviour
         FrustumObjectObj = GameObject.CreatePrimitive(PrimitiveType.Plane);
         FrustumObjectObj.name = "FrustumObjectObj";
 
+        LeftPlaneObj.layer = LayerMask.NameToLayer("Uncuttable");
+        RightPlaneObj.layer = LayerMask.NameToLayer("Uncuttable");
+        TopPlaneObj.layer = LayerMask.NameToLayer("Uncuttable");
+        BottomPlaneObj.layer = LayerMask.NameToLayer("Uncuttable");
+        
         leftPlaneMC = LeftPlaneObj.GetComponent<MeshCollider>();
         leftPlaneMC.convex = true;
         leftPlaneMC.isTrigger = true;
@@ -82,10 +87,10 @@ public class FrustumCutHandler : MonoBehaviour
         bottomPlaneMF = BottomPlaneObj.GetComponent<MeshFilter>();
         frustumObjectMF = FrustumObjectObj.GetComponent<MeshFilter>();
 
-        // LeftPlaneMesh.GetComponent<MeshRenderer>().enabled = false;
-        // RightPlaneMesh.GetComponent<MeshRenderer>().enabled = false;
-        // TopPlaneMesh.GetComponent<MeshRenderer>().enabled = false;
-        // BottomPlaneMesh.GetComponent<MeshRenderer>().enabled = false;
+        leftPlaneMF.GetComponent<MeshRenderer>().enabled = false;
+        rightPlaneMF.GetComponent<MeshRenderer>().enabled = false;
+        topPlaneMF.GetComponent<MeshRenderer>().enabled = false;
+        bottomPlaneMF.GetComponent<MeshRenderer>().enabled = false;
         frustumObjectMF.GetComponent<MeshRenderer>().enabled = false;
 
         var leftChecker = LeftPlaneObj.AddComponent<CollisionChecker>();
@@ -121,7 +126,7 @@ public class FrustumCutHandler : MonoBehaviour
         LeftDownFrustumPos = new Vector3(-FarPlaneWidth/2,-FarPlaneHeight/2, DistanceToFarPlane);
         RightUpFrustumPos = new Vector3(FarPlaneWidth/2,FarPlaneHeight/2, DistanceToFarPlane);
         RightDownFrustumPos = new Vector3(FarPlaneWidth/2,-FarPlaneHeight/2, DistanceToFarPlane);
-        Debug.Log("LeftUp: " + LeftUpFrustumPos +"; RightUp: " +  RightUpFrustumPos + "; LeftDown: "  + LeftDownFrustumPos + "; RightDown: " + RightDownFrustumPos);
+        //Debug.Log("LeftUp: " + LeftUpFrustumPos +"; RightUp: " +  RightUpFrustumPos + "; LeftDown: "  + LeftDownFrustumPos + "; RightDown: " + RightDownFrustumPos);
         LeftUpFrustumPos = CapturePoint.TransformPoint(LeftUpFrustumPos);
         LeftDownFrustumPos = CapturePoint.TransformPoint(LeftDownFrustumPos);
         RightUpFrustumPos = CapturePoint.TransformPoint(RightUpFrustumPos);
@@ -129,13 +134,13 @@ public class FrustumCutHandler : MonoBehaviour
         
         //Plane To get Normal vector to define cut plane in next process
         leftPlane = new Plane(CameraPos, LeftUpFrustumPos, LeftDownFrustumPos);
-        rightPlane = new Plane(CameraPos, RightUpFrustumPos, RightDownFrustumPos);
+        rightPlane = new Plane(CameraPos, RightDownFrustumPos, RightUpFrustumPos);
         bottomPlane = new Plane(CameraPos, LeftDownFrustumPos, RightDownFrustumPos);
-        topPlane = new  Plane(CameraPos, LeftUpFrustumPos, RightUpFrustumPos);
-
+        topPlane = new  Plane(CameraPos, RightUpFrustumPos, LeftUpFrustumPos);
+        
         var leftOffset = leftPlane.normal * customOffset;
-        leftPlaneMF.mesh = CreateTriangleMesh(CameraPos, LeftDownFrustumPos, LeftUpFrustumPos,
-            CameraPos + leftOffset, LeftDownFrustumPos + leftOffset, LeftUpFrustumPos + leftOffset);
+        leftPlaneMF.mesh = CreateTriangleMesh(CameraPos, LeftUpFrustumPos, LeftDownFrustumPos,
+            CameraPos + leftOffset, LeftUpFrustumPos + leftOffset, LeftDownFrustumPos + leftOffset);
         leftPlaneMC.sharedMesh = leftPlaneMF.mesh;
 
         var rightOffset = rightPlane.normal * customOffset;
@@ -144,8 +149,8 @@ public class FrustumCutHandler : MonoBehaviour
         rightPlaneMC.sharedMesh = rightPlaneMF.mesh;
         
         var topOffset = topPlane.normal * customOffset;
-        topPlaneMF.mesh = CreateTriangleMesh(CameraPos,LeftUpFrustumPos, RightUpFrustumPos,
-            CameraPos + topOffset, LeftUpFrustumPos + topOffset, RightUpFrustumPos + topOffset);
+        topPlaneMF.mesh = CreateTriangleMesh(CameraPos, RightUpFrustumPos, LeftUpFrustumPos,
+            CameraPos + topOffset, RightUpFrustumPos + topOffset, LeftUpFrustumPos + topOffset);
         topPlaneMC.sharedMesh = topPlaneMF.mesh;
         
         var bottomOffset = bottomPlane.normal * customOffset;
@@ -164,10 +169,10 @@ public class FrustumCutHandler : MonoBehaviour
 
     private IEnumerator ActualCut(bool bTakingPic)
     {
+        leftPlaneMC.enabled = true;
         rightPlaneMC.enabled = true;
         topPlaneMC.enabled = true;
         bottomPlaneMC.enabled = true;
-        leftPlaneMC.enabled = true;
         
         yield return new WaitForFixedUpdate();
         
@@ -182,7 +187,6 @@ public class FrustumCutHandler : MonoBehaviour
 
         foreach (GameObject objToCut in ObjectsInLeft)
         {
-            Debug.Log(objToCut.name);
             if (bTakingPic)
             {
                 string OrginalName = objToCut.name;
@@ -202,12 +206,12 @@ public class FrustumCutHandler : MonoBehaviour
                 pieceHandler = objToCut.AddComponent<CutPieceHandler>();
                 pieceHandler.AddPiece(objToCut);//the original object is still a piece
             }
-
+        
             GameObject newPiece = Cutter.Cut(objToCut, (LeftDownFrustumPos + LeftUpFrustumPos + CameraPos) / 3 , leftPlane.normal);
             pieceHandler.AddPiece(newPiece);
             allObjects.Add(newPiece);
         }
-
+        
         foreach (GameObject objToCut in ObjectsInRight)
         {
             if (bTakingPic)
@@ -233,11 +237,12 @@ public class FrustumCutHandler : MonoBehaviour
                 pieceHandler = objToCut.AddComponent<CutPieceHandler>();
                 pieceHandler.AddPiece(objToCut);//the original object is still a piece
             }
-
+        
             int amountPiece = pieceHandler.Pieces.Count;
             for(int i = 0; i < amountPiece; i++)
             {
-                GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i], (RightDownFrustumPos + RightUpFrustumPos + CameraPos) / 3 , leftPlane.normal);
+                Debug.Log("Piece to cut: " + objToCut.name);
+                GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i], (RightDownFrustumPos + RightUpFrustumPos + CameraPos) / 3 , rightPlane.normal);
                 pieceHandler.AddPiece(newPiece);
                 allObjects.Add(newPiece);
             }
@@ -268,11 +273,11 @@ public class FrustumCutHandler : MonoBehaviour
                 pieceHandler = objToCut.AddComponent<CutPieceHandler>();
                 pieceHandler.AddPiece(objToCut);//the original object is still a piece
             }
-
+        
             int amountPiece = pieceHandler.Pieces.Count;
             for(int i = 0; i < amountPiece; i++)
             {
-                GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i], (LeftUpFrustumPos + RightUpFrustumPos + CameraPos) / 3 , leftPlane.normal);
+                GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i], (LeftUpFrustumPos + RightUpFrustumPos + CameraPos) / 3 , topPlane.normal);
                 pieceHandler.AddPiece(newPiece);
                 allObjects.Add(newPiece);
             }
@@ -303,46 +308,46 @@ public class FrustumCutHandler : MonoBehaviour
                 pieceHandler = objToCut.AddComponent<CutPieceHandler>();
                 pieceHandler.AddPiece(objToCut);//the original object is still a piece
             }
-
+        
             int amountPiece = pieceHandler.Pieces.Count;
             for(int i = 0; i < amountPiece; i++)
             {
-                GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i],(RightDownFrustumPos + LeftDownFrustumPos + CameraPos) / 3 , leftPlane.normal);
+                GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i],(RightDownFrustumPos + LeftDownFrustumPos + CameraPos) / 3 , bottomPlane.normal);
                 pieceHandler.AddPiece(newPiece);
                 allObjects.Add(newPiece);
             }
         }
         
         //need to add a little margin aiming inside
-        frustumObjectMF.mesh = CreateFrustumObject(CameraPos + (CapturePoint.forward * -customOffset),
-            RightDownFrustumPos + (rightPlane.normal * -customOffset),
-            RightUpFrustumPos + (rightPlane.normal * -customOffset),
-            LeftUpFrustumPos + (leftPlane.normal * -customOffset),
-            LeftDownFrustumPos + (leftPlane.normal * -customOffset));
-        frustumObjectMC.sharedMesh = frustumObjectMF.mesh;
-        //at this point, cut objects is gonna overlap with Frustum Volume Collider.  Intact objects
-        frustumObjectMC.enabled = true;
-        yield return new WaitForFixedUpdate();
-        frustumObjectMC.enabled = false; 
-
-        if (ending != null) ObjectsInFrustum.Add(ending);
-
-        if (bTakingPic) 
-        {
-            activeFilm = new PolaroidFilm(ObjectsInFrustum, CapturePoint);//save objects in picture for picture hold and manage in hidden visibility
-
-            foreach(var intactObj in intactObjects) intactObj.SetActive(true);
-            //Destroy objects contain cut pieces in all object, just only display by Intact Objects above instead of pieces
-            foreach (var obj in allObjects) if (obj != null) Destroy(obj);  
-        }
-        else 
-        {
-            activeFilm.ActivateFilm();//Display Placeholder Mesh Objects in frame and end relative with camera
-
-            foreach(var obj in allObjects) Destroy(obj.GetComponent<CutPieceHandler>());
-            foreach(var obj in ObjectsInFrustum) Destroy(obj);
-            Debug.Log("Clean Objects in collider checker" + "Object remain: " + ObjectsInFrustum.Count);
-        }
+         frustumObjectMF.mesh = CreateFrustumObject(CameraPos + (CapturePoint.forward * -customOffset),
+             RightDownFrustumPos + (rightPlane.normal * -customOffset),
+             RightUpFrustumPos + (rightPlane.normal * -customOffset),
+             LeftUpFrustumPos + (leftPlane.normal * -customOffset),
+             LeftDownFrustumPos + (leftPlane.normal * -customOffset));
+         frustumObjectMC.sharedMesh = frustumObjectMF.mesh;
+         //at this point, cut objects is gonna overlap with Frustum Volume Collider.  Intact objects
+         frustumObjectMC.enabled = true;
+         yield return new WaitForFixedUpdate();
+         frustumObjectMC.enabled = false; 
+        
+         if (ending != null) ObjectsInFrustum.Add(ending);
+        
+         if (bTakingPic) 
+         {
+             activeFilm = new PolaroidFilm(ObjectsInFrustum, CapturePoint);//save objects in picture for picture hold and manage in hidden visibility
+        
+             foreach(var intactObj in intactObjects) intactObj.SetActive(true);
+             //Destroy objects contain cut pieces in all object, just only display by Intact Objects above instead of pieces
+             foreach (var obj in allObjects) if (obj != null) Destroy(obj);  
+         }
+         else 
+         {
+             if(activeFilm != null) activeFilm.ActivateFilm();//Display Placeholder Mesh Objects in frame and end relative with camera
+        
+             foreach(var obj in allObjects) Destroy(obj.GetComponent<CutPieceHandler>());
+             foreach(var obj in ObjectsInFrustum) Destroy(obj);
+             Debug.Log("Clean Objects in collider checker" + "Object remain: " + ObjectsInFrustum.Count);
+         }
     }
     
     public void AddObjectToCut(GameObject toCut, int side)
@@ -385,8 +390,6 @@ public class FrustumCutHandler : MonoBehaviour
         };
         
         Mesh mesh = new Mesh { vertices = vertices, triangles = triangles };
-        mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
         return mesh;
     }
 

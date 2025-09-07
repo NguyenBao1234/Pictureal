@@ -7,18 +7,20 @@ public class PhotoCamera : MonoBehaviour
 {
     public FrustumCutHandler frustumCutHandler;
 
-    public Camera renderCam;       // Camera phụ
-    public RenderTexture renderTex; 
+    private Camera PolaroidRenderCam;       // Camera phụ
     public GameObject photoPrefab; // Prefab cái ảnh (Quad cầm tay)
     
     private Texture2D capturedTex;
     private PlayerInput playerInput;
     private bool bTakenPhoto;
+    private bool bLookingViaCamera = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        PolaroidRenderCam = frustumCutHandler.CameraBinocular;
+        PolaroidRenderCam.gameObject.SetActive(false);
+        photoPrefab.SetActive(false);//refactoring later
     }
     private void OnEnable()
     {
@@ -34,38 +36,43 @@ public class PhotoCamera : MonoBehaviour
 
     private void OnAction(InputAction.CallbackContext obj)
     {
-        if(!bTakenPhoto) CapturePhoto();
+        if (bLookingViaCamera) CapturePhoto();
         else
         {
-            frustumCutHandler.Cut(false);
-            bTakenPhoto = false;
+            //Hold camera to look
+            if (bTakenPhoto)
+            {
+                frustumCutHandler.Cut(false);
+                bTakenPhoto = false;
+                photoPrefab.SetActive(false);
+                return;
+            }
+            PolaroidRenderCam.gameObject.SetActive(true);
+            bLookingViaCamera = true;
+            photoPrefab.SetActive(true);
         }
     }
     
     void OnSubAction(InputAction.CallbackContext ctx)
     {
         Debug.Log("Implement SubAction Later");
+        if (bLookingViaCamera)
+        {
+            photoPrefab.SetActive(false);
+            bLookingViaCamera = false;
+            PolaroidRenderCam.gameObject.SetActive(false);
+        }
     }
     void CapturePhoto()
     {
         bTakenPhoto = true;
-        // RenderTexture.active = renderTex;
-        // renderCam.targetTexture = renderTex;
-        //
-        // renderCam.Render();
-        //
-        // capturedTex = new Texture2D(renderTex.width, renderTex.height, TextureFormat.RGB24, false);
-        // capturedTex.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
-        // capturedTex.Apply();// copy data calculated in cpu into gpu
 
+        PolaroidRenderCam.gameObject.SetActive(false);
+        bLookingViaCamera = false;
         if (frustumCutHandler)
         {
             frustumCutHandler.Cut(true);
         }
-        // Tạo 1 tấm ảnh player có thể cầm
-        if(photoPrefab == null)  return;
-        GameObject photo = Instantiate(photoPrefab);
-        photo.GetComponent<Renderer>().material.mainTexture = capturedTex;
     }
     
     private void OnDisable()

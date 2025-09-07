@@ -55,6 +55,7 @@ public class FrustumCutHandler : MonoBehaviour
         RightPlaneObj.layer = LayerMask.NameToLayer("Uncuttable");
         TopPlaneObj.layer = LayerMask.NameToLayer("Uncuttable");
         BottomPlaneObj.layer = LayerMask.NameToLayer("Uncuttable");
+        FrustumObjectObj.layer = LayerMask.NameToLayer("Uncuttable");
         
         leftPlaneMC = LeftPlaneObj.GetComponent<MeshCollider>();
         leftPlaneMC.convex = true;

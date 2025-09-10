@@ -117,6 +117,7 @@ public class FrustumCutHandler : MonoBehaviour
 
     public void Cut(bool bTakingPic)
     {
+        Debug.Log("Cut occur with bTakingPic:" + bTakingPic);
         CameraPos = CapturePoint.transform.position;
         
         float DistanceToFarPlane = CameraBinocular.farClipPlane;
@@ -242,7 +243,7 @@ public class FrustumCutHandler : MonoBehaviour
             int amountPiece = pieceHandler.Pieces.Count;
             for(int i = 0; i < amountPiece; i++)
             {
-                Debug.Log("Piece to cut: " + objToCut.name);
+                if(pieceHandler.Pieces[i] == null ) continue;
                 GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i], (RightDownFrustumPos + RightUpFrustumPos + CameraPos) / 3 , rightPlane.normal);
                 pieceHandler.AddPiece(newPiece);
                 allObjects.Add(newPiece);
@@ -278,6 +279,7 @@ public class FrustumCutHandler : MonoBehaviour
             int amountPiece = pieceHandler.Pieces.Count;
             for(int i = 0; i < amountPiece; i++)
             {
+                if(pieceHandler.Pieces[i] == null ) continue;
                 GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i], (LeftUpFrustumPos + RightUpFrustumPos + CameraPos) / 3 , topPlane.normal);
                 pieceHandler.AddPiece(newPiece);
                 allObjects.Add(newPiece);
@@ -313,6 +315,7 @@ public class FrustumCutHandler : MonoBehaviour
             int amountPiece = pieceHandler.Pieces.Count;
             for(int i = 0; i < amountPiece; i++)
             {
+                if(pieceHandler.Pieces[i] == null ) continue;
                 GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i],(RightDownFrustumPos + LeftDownFrustumPos + CameraPos) / 3 , bottomPlane.normal);
                 pieceHandler.AddPiece(newPiece);
                 allObjects.Add(newPiece);
@@ -339,15 +342,15 @@ public class FrustumCutHandler : MonoBehaviour
         
              foreach(var intactObj in intactObjects) intactObj.SetActive(true);
              //Destroy objects contain cut pieces in all object, just only display by Intact Objects above instead of pieces
-             foreach (var obj in allObjects) if (obj != null) Destroy(obj);  
+             foreach (var obj in allObjects) if (obj != null) Destroy(obj);
+             
          }
          else 
          {
              if(activeFilm != null) activeFilm.ActivateFilm();//Display Placeholder Mesh Objects in frame and end relative with camera
         
-             foreach(var obj in allObjects) Destroy(obj.GetComponent<CutPieceHandler>());
-             foreach(var obj in ObjectsInFrustum) Destroy(obj);
-             Debug.Log("Clean Objects in collider checker" + "Object remain: " + ObjectsInFrustum.Count);
+             foreach(var obj in allObjects) if(obj != null) Destroy(obj.GetComponent<CutPieceHandler>());
+             foreach(var obj in ObjectsInFrustum) if(obj != null) Destroy(obj);
          }
     }
     

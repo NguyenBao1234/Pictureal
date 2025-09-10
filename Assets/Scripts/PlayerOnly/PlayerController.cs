@@ -4,6 +4,16 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    [Header("Footstep Settings")]
+    public AudioSource audioSource;
+    public AudioClip[] footstepClips; // mảng tiếng bước chân
+    public float walkStepInterval = 0.5f; // khoảng cách thời gian giữa các bước khi đi
+    public float runStepInterval = 0.3f;  // khi chạy
+
+    private float stepCycle = 0f;
+    private float nextStep = 0f;
+    private float stepTimer = 0f;
+
     [Header("Movement Settings")]
     public float walkSpeed = 3f;
     public float runSpeed = 6f;
@@ -25,7 +35,6 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     private Vector3 velocity;
     private float rotationX = 0;
-
     private bool canMove = true;
     private float targetSpeed;
 
@@ -34,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 lookInput;
     private bool bCrouching;
     private PlayerInput playerInput;
-    
+
     [Header("Interaction Settings")]
     public float interactDistance = 2f;        // khoảng cách quét
     public Vector3 boxHalfExtents = new Vector3(0.5f, 0.5f, 0.5f); // kích thước box
@@ -47,21 +56,21 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-    
+
     private void OnEnable()
     {
-        if(!playerInput) playerInput = GetComponent<PlayerInput>();
+        if (!playerInput) playerInput = GetComponent<PlayerInput>();
         playerInput.actions["Move"].performed += OnMove;
         playerInput.actions["Move"].canceled += OnMove;
         playerInput.actions["Look"].performed += OnLook;
         playerInput.actions["Look"].canceled += OnLook;
 
         playerInput.actions["Sprint"].performed += OnSprint;
-        playerInput.actions["Sprint"].canceled  += OnSprint;
+        playerInput.actions["Sprint"].canceled += OnSprint;
 
         playerInput.actions["Crouch"].performed += OnCrouch;
-        playerInput.actions["Crouch"].canceled  += OnCrouch;
-        
+        playerInput.actions["Crouch"].canceled += OnCrouch;
+
         playerInput.actions["Interact"].performed += OnInteract;
         playerInput.actions["Jump"].performed += OnJump;
     }
@@ -69,28 +78,30 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         playerInput.actions["Move"].performed -= OnMove;
-        playerInput.actions["Move"].canceled  -= OnMove;
+        playerInput.actions["Move"].canceled -= OnMove;
 
         playerInput.actions["Look"].performed -= OnLook;
-        playerInput.actions["Look"].canceled  -= OnLook;
+        playerInput.actions["Look"].canceled -= OnLook;
 
         playerInput.actions["Sprint"].performed -= OnSprint;
-        playerInput.actions["Sprint"].canceled  -= OnSprint;
+        playerInput.actions["Sprint"].canceled -= OnSprint;
 
         playerInput.actions["Crouch"].performed -= OnCrouch;
-        playerInput.actions["Crouch"].canceled  -= OnCrouch;
+        playerInput.actions["Crouch"].canceled -= OnCrouch;
 
         playerInput.actions["Interact"].performed -= OnInteract;
         playerInput.actions["Jump"].performed -= OnJump;
     }
-    
+
     private void Update()
     {
         HandleMovement();
         ApplyMovement();
         HandleLook();
+        HandleFootsteps();
+
     }
-    
+
     // === Input Callbacks ===
     private void OnInteract(InputAction.CallbackContext ctx)
     {
@@ -98,7 +109,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
     private void OnLook(InputAction.CallbackContext ctx) => lookInput = ctx.ReadValue<Vector2>();
-    
+
     public void OnSprint(InputAction.CallbackContext ctx)
     {
         if (bCrouching) return;
@@ -117,7 +128,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             bCrouching = false;
-            targetSpeed = walkSpeed;   
+            targetSpeed = walkSpeed;
             characterController.height = defaultHeight;
         }
     }
@@ -171,7 +182,7 @@ public class PlayerController : MonoBehaviour
         cameraHolder.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, lookInput.x * lookSpeed * 0.1f, 0);
     }
-    
+
     public void AttemptInteract()
     {
         Vector3 center = cameraHolder.position + cameraHolder.forward * interactDistance;
@@ -197,4 +208,73 @@ public class PlayerController : MonoBehaviour
         Gizmos.matrix = Matrix4x4.TRS(center, cameraHolder.rotation, Vector3.one);
         Gizmos.DrawWireCube(Vector3.zero, boxHalfExtents * 2f);
     }
+
+    private bool isMoving = false;
+
+    private void HandleFootsteps()
+{
+    if (!characterController.isGrounded)
+    {
+        stepTimer = (targetSpeed == runSpeed) ? runStepInterval : walkStepInterval;
+        isMoving = false;
+        return;
+    }
+
+    Vector3 horizontalVelocity = new Vector3(characterController.velocity.x, 0, characterController.velocity.z);
+    float speed = horizontalVelocity.magnitude;
+
+    // nếu đứng yên → reset timer về interval, không cho kêu tiếp
+    if (speed < 0.1f)
+    {
+        stepTimer = (targetSpeed == runSpeed) ? runStepInterval : walkStepInterval;
+        isMoving = false;
+        return;
+    }
+
+    // nếu vừa bắt đầu di chuyển
+    if (!isMoving)
+    {
+        PlayFootstep();
+        isMoving = true;
+        stepTimer = (targetSpeed == runSpeed) ? runStepInterval : walkStepInterval;
+        return;
+    }
+
+    // bình thường khi đang di chuyển
+    float interval = (targetSpeed == runSpeed) ? runStepInterval : walkStepInterval;
+    stepTimer -= Time.deltaTime;
+
+    if (stepTimer <= 0f)
+    {
+        Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
+        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, 2f))
+        {
+            if (hit.collider.CompareTag("Ground"))
+            {
+                PlayFootstep();
+            }
+        }
+
+        stepTimer = interval;
+    }
 }
+
+
+
+    private int lastIndex = -1;
+
+    private void PlayFootstep()
+    {
+        if (footstepClips.Length == 0) return;
+
+        int index;
+        do
+        {
+            index = Random.Range(0, footstepClips.Length);
+        } while (index == lastIndex && footstepClips.Length > 1);
+
+        lastIndex = index;
+        audioSource.PlayOneShot(footstepClips[index]);
+    }
+}
+

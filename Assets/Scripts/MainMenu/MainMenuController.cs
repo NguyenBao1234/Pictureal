@@ -5,10 +5,18 @@ using System.Collections;
 
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject mainMenuPanel;     // panel chứa nút chính
-    public GameObject settingMenuPanel;  // panel chứa menu Setting
-    public Image flashImage;             // flash chụp ảnh
-    public Image fadeImage;              // fade đen
+    public GameObject mainMenuPanel;
+    public GameObject settingMenuPanel;
+    public Image flashImage;   // flash nháy đen ngay lập tức
+    public Image fadeImage;    // fade sang đen từ từ
+
+    [Header("Timings")]
+    public float flashHold = 0.1f;        // thời gian giữ flash đen
+    public float delayBeforeFade = 1.0f;  // GIỮ 1 GIÂY sau flash trước khi fade
+    public float fadeDuration = 1.0f;     // thời gian fade sang đen
+    public float blackHold = 0.5f;        // giữ màn hình đen trước khi load scene
+
+    public string sceneToLoad = "SampleScene";
 
     public void OnNewGame()
     {
@@ -17,49 +25,58 @@ public class MainMenuController : MonoBehaviour
 
     IEnumerator NewGameSequence()
 {
-    // Vô hiệu nút bấm khi đã start
-    var cg = mainMenuPanel.GetComponent<CanvasGroup>();
-    if (cg) cg.interactable = false;
+     // --- ẨN TOÀN BỘ MENU NGAY LẬP TỨC ---
+    mainMenuPanel.SetActive(false);
 
-    // FLASH effect (camera chụp)
-    flashImage.gameObject.SetActive(true);
-    flashImage.color = new Color(1, 1, 1, 1);  // bật sáng trắng full ngay lập tức
+    // FLASH effect (chớp đen nhanh)
+flashImage.gameObject.SetActive(true);
+flashImage.color = new Color(0, 0, 0, 1);  // đen bật lên ngay lập tức
 
-    yield return new WaitForSeconds(0.05f); // nháy cực nhanh
-    flashImage.color = new Color(1, 1, 1, 0); // tắt flash ngay
+yield return new WaitForSeconds(flashHold); // giữ đen trong tích tắc (ví dụ 0.1s)
 
-    // MÀN HÌNH ĐEN NGAY LẬP TỨC
-    fadeImage.gameObject.SetActive(true);
-    fadeImage.color = new Color(0, 0, 0, 1); // đen full luôn
+flashImage.color = new Color(0, 0, 0, 0); // tắt ngay lập tức
 
-    // Giữ 1s đen trước khi load
-    yield return new WaitForSeconds(1f);
+// GIỮ MÀN HÌNH BÌNH THƯỜNG 1s TRƯỚC KHI FADE
+yield return new WaitForSeconds(1f);
 
-    // Load scene
-    SceneManager.LoadScene("SampleScene"); // đổi sang tên scene của bạn
+// bắt đầu fade sang đen từ từ
+fadeImage.gameObject.SetActive(true);
+float t = 0;
+while (t < fadeDuration)
+{
+    t += Time.deltaTime;
+    float alpha = Mathf.Clamp01(t / fadeDuration);
+    fadeImage.color = new Color(0, 0, 0, alpha);
+    yield return null;
 }
 
+// giữ đen thêm 0.5s
+yield return new WaitForSeconds(blackHold);
 
+// Load scene
+SceneManager.LoadScene(sceneToLoad);
 
+}
 
-    public void OnPrototype()
-    {
-        Debug.Log("Prototype feature pending...");
-    }
-
+    // Các hàm khác
     public void OnSetting()
     {
         mainMenuPanel.SetActive(false);
         settingMenuPanel.SetActive(true);
     }
 
-    public void OnQuit()
-    {
-        Application.Quit();
-    }
     public void OnBack()
     {
         settingMenuPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
+    }
+
+    public void OnQuit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

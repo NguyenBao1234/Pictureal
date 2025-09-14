@@ -925,6 +925,7 @@ GameObject:
   - component: {fileID: 1152334491}
   - component: {fileID: 1152334493}
   - component: {fileID: 1152334492}
+  - component: {fileID: 1152334494}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -1157,6 +1158,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PhotoCamera
   frustumCutHandler: {fileID: 1152334492}
   photoPrefab: {fileID: 1922845474}
+--- !u!114 &1152334494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152334486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf0ccf55fb2ebb4c82735c09e1bd5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RewindableObject
+  bRewinding: 0
 --- !u!1 &1490583930
 GameObject:
   m_ObjectHideFlags: 0

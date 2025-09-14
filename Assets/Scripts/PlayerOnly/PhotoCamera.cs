@@ -14,6 +14,7 @@ public class PhotoCamera : MonoBehaviour
     private PlayerInput playerInput;
     private bool bTakenPhoto;
     private bool bLookingViaCamera = false;
+    private int remainingFilm = 5;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,11 +52,11 @@ public class PhotoCamera : MonoBehaviour
             bLookingViaCamera = true;
             photoPrefab.SetActive(true);
         }
+        Debug.Log("Remain Films:"+remainingFilm);
     }
     
     void OnSubAction(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Implement SubAction Later");
         if (bLookingViaCamera)
         {
             photoPrefab.SetActive(false);
@@ -65,8 +66,11 @@ public class PhotoCamera : MonoBehaviour
     }
     void CapturePhoto()
     {
+        //it will Play button click SFX here
+        if (remainingFilm == 0) return;
+        remainingFilm--;
         bTakenPhoto = true;
-
+        
         PolaroidRenderCam.gameObject.SetActive(false);
         bLookingViaCamera = false;
         if (frustumCutHandler)
@@ -80,4 +84,6 @@ public class PhotoCamera : MonoBehaviour
         playerInput.actions["Action"].performed -= OnAction;
         playerInput.actions["SubAction"].performed -= OnSubAction;
     }
+
+    public void AddToRemainingFilm(int inAmount) {remainingFilm += inAmount;}
 }

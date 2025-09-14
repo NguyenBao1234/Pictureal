@@ -9,9 +9,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] footstepClips; // mảng tiếng bước chân
     public float walkStepInterval = 0.5f; // khoảng cách thời gian giữa các bước khi đi
     public float runStepInterval = 0.3f;  // khi chạy
-
-    private float stepCycle = 0f;
-    private float nextStep = 0f;
     private float stepTimer = 0f;
 
     [Header("Movement Settings")]
@@ -249,7 +246,7 @@ public class PlayerController : MonoBehaviour
         Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
         if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, 2f))
         {
-            if (hit.collider.CompareTag("Ground"))
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Default"))
             {
                 PlayFootstep();
             }

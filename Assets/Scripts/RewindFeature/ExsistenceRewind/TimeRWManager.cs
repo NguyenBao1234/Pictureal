@@ -73,5 +73,6 @@ public class TimeRWManager : MonoBehaviour
     {
         inRewindableEvent.OccurredTime = CurrentTime;
         RewindableEvents.Add(inRewindableEvent);
+        Debug.Log( inRewindableEvent+ " at " + inRewindableEvent.OccurredTime + " Record");
     }
 }

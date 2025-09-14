@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController characterController;
     private Vector3 velocity;
-    private float rotationX = 0;
     private bool canMove = true;
     private float targetSpeed;
 
@@ -40,6 +39,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 lookInput;
     private bool bCrouching;
     private PlayerInput playerInput;
+    private bool bRewinding = false;
+    private RewindableObject rwObj;
 
     [Header("Interaction Settings")]
     public float interactDistance = 2f;        // khoảng cách quét
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
         targetSpeed = walkSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        rwObj = GetComponent<RewindableObject>();
     }
 
     private void OnEnable()
@@ -70,7 +72,12 @@ public class PlayerController : MonoBehaviour
 
         playerInput.actions["Interact"].performed += OnInteract;
         playerInput.actions["Jump"].performed += OnJump;
+        
+        playerInput.actions["Rewind"].performed += StarRewind;
+        playerInput.actions["Rewind"].canceled += StopRewind;
+
     }
+
 
     private void OnDisable()
     {
@@ -141,6 +148,7 @@ public class PlayerController : MonoBehaviour
     // --- Logic di chuyển ---
     private void HandleMovement()
     {
+        if (!canMove || bRewinding) return;
         Vector3 inputDir = (transform.forward * moveInput.y + transform.right * moveInput.x).normalized;
 
         if (characterController.isGrounded)
@@ -148,8 +156,7 @@ public class PlayerController : MonoBehaviour
             velocity.x = inputDir.x * targetSpeed;
             velocity.z = inputDir.z * targetSpeed;
 
-            if (velocity.y < 0f)
-                velocity.y = -2f; // giữ player dính đất
+            if (velocity.y < 0f) velocity.y = -2f;
         }
         else
         {
@@ -158,12 +165,25 @@ public class PlayerController : MonoBehaviour
             velocity.z = Mathf.Lerp(velocity.z, inputDir.z * targetSpeed, airControlPercent * Time.deltaTime);
 
             // gravity
-            if (velocity.y > 0)
-                velocity.y += gravity * Time.deltaTime;
-            else
-                velocity.y += gravity * fallMultiplier * Time.deltaTime;
+            if (velocity.y > 0) velocity.y += gravity * Time.deltaTime;
+            else velocity.y += gravity * fallMultiplier * Time.deltaTime;
         }
     }
+    
+    private void StarRewind(InputAction.CallbackContext obj)
+    {
+        if (rwObj == null) return;
+        rwObj.SetRewind(true);
+        bRewinding = true;
+    }
+
+    private void StopRewind(InputAction.CallbackContext obj)
+    {
+        if (rwObj == null) return;
+        rwObj.SetRewind(false);
+        bRewinding = false;
+    }
+
 
     private void ApplyMovement()
     {
@@ -172,8 +192,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleLook()
     {
-        if (!canMove) return;
-
+        if (bRewinding) return;
+        float rotationX = cameraHolder.localRotation.eulerAngles.x;
+        if(rotationX > 180) rotationX -= 360;
         rotationX += -lookInput.y * lookSpeed * 0.1f;
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
         cameraHolder.localRotation = Quaternion.Euler(rotationX, 0, 0);

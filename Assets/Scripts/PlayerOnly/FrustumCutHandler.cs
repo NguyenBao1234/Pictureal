@@ -357,6 +357,8 @@ public class FrustumCutHandler : MonoBehaviour
                  TimeRWManager.GetInst().RecordEvent(rwDestroyEvent);
                  Destroy(obj);
              }
+             var useFilmEvent = new UseFilmEvent(gameObject);
+             TimeRWManager.GetInst().RecordEvent(useFilmEvent);
          }
     }
     

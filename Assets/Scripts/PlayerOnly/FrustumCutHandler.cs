@@ -117,7 +117,6 @@ public class FrustumCutHandler : MonoBehaviour
 
     public void Cut(bool bTakingPic)
     {
-        Debug.Log("Cut occur with bTakingPic:" + bTakingPic);
         CameraPos = CapturePoint.transform.position;
         
         float DistanceToFarPlane = CameraBinocular.farClipPlane;
@@ -348,9 +347,16 @@ public class FrustumCutHandler : MonoBehaviour
          else 
          {
              if(activeFilm != null) activeFilm.ActivateFilm();//Display Placeholder Mesh Objects in frame and end relative with camera
-        
-             foreach(var obj in allObjects) if(obj != null) Destroy(obj.GetComponent<CutPieceHandler>());
-             foreach(var obj in ObjectsInFrustum) if(obj != null) Destroy(obj);
+
+             foreach (var obj in allObjects) if(obj != null) Destroy(obj.GetComponent<CutPieceHandler>());
+             
+             foreach (var obj in ObjectsInFrustum)
+             {
+                 if (obj == null) continue;
+                 var rwDestroyEvent = new DestroyEvent(obj, obj.transform.position, obj.transform.rotation);
+                 TimeRWManager.GetInst().RecordEvent(rwDestroyEvent);
+                 Destroy(obj);
+             }
          }
     }
     
@@ -440,8 +446,11 @@ public class FrustumCutHandler : MonoBehaviour
         {
             for (int i = 0; i < placeHolders.Count; i++)
             {
-                placeHolders[i].transform.SetParent(null);
-                placeHolders[i].SetActive(true);
+                var obj = placeHolders[i];
+                obj.transform.SetParent(null);
+                obj.SetActive(true);
+                var rwSpawnEvent = new SpawnEvent(obj);
+                TimeRWManager.GetInst().RecordEvent(rwSpawnEvent);
             }
         }
     }

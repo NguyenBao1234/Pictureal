@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;   // Thêm thư viện UI
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -29,6 +30,9 @@ public class PlayerController : MonoBehaviour
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
 
+    [Header("Rewind UI")]
+    public GameObject rewindUI; // UI chứa icon + chữ
+
     private CharacterController characterController;
     private Vector3 velocity;
     private bool canMove = true;
@@ -54,6 +58,9 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rwObj = GetComponent<RewindableObject>();
+
+        if (rewindUI != null)
+            rewindUI.SetActive(false); // ban đầu tắt UI
     }
 
     private void OnEnable()
@@ -73,7 +80,7 @@ public class PlayerController : MonoBehaviour
         playerInput.actions["Interact"].performed += OnInteract;
         playerInput.actions["Jump"].performed += OnJump;
         
-        playerInput.actions["Rewind"].performed += StarRewind;
+        playerInput.actions["Rewind"].performed += StartRewind;
         playerInput.actions["Rewind"].canceled += StopRewind;
 
     }
@@ -170,11 +177,14 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    private void StarRewind(InputAction.CallbackContext obj)
+    private void StartRewind(InputAction.CallbackContext obj)
     {
         if (rwObj == null) return;
         rwObj.SetRewind(true);
         bRewinding = true;
+
+        if (rewindUI != null)
+            rewindUI.SetActive(true);
     }
 
     private void StopRewind(InputAction.CallbackContext obj)
@@ -182,6 +192,9 @@ public class PlayerController : MonoBehaviour
         if (rwObj == null) return;
         rwObj.SetRewind(false);
         bRewinding = false;
+
+        if (rewindUI != null)
+            rewindUI.SetActive(false);
     }
 
 

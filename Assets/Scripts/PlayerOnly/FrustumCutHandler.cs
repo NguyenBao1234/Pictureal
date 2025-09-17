@@ -183,7 +183,7 @@ public class FrustumCutHandler : MonoBehaviour
         topPlaneMC.enabled = false;
         bottomPlaneMC.enabled = false;
         
-        List<GameObject> allObjects = new List<GameObject>();
+        List<GameObject> allObjectsFromCut = new List<GameObject>();
         List<GameObject> intactObjects = new List<GameObject>();
 
         foreach (GameObject objToCut in ObjectsInLeft)
@@ -199,7 +199,7 @@ public class FrustumCutHandler : MonoBehaviour
                 cloneObj.SetActive(false);//hide temporarily and ensure it doesn't overlap with Frustum Volume
                 intactObjects.Add(cloneObj);
             }
-            if(!allObjects.Contains(objToCut)) allObjects.Add(objToCut);
+            if(!allObjectsFromCut.Contains(objToCut)) allObjectsFromCut.Add(objToCut);
             
             CutPieceHandler pieceHandler = objToCut.GetComponent<CutPieceHandler>();
             if (!pieceHandler)
@@ -210,7 +210,7 @@ public class FrustumCutHandler : MonoBehaviour
         
             GameObject newPiece = Cutter.Cut(objToCut, (LeftDownFrustumPos + LeftUpFrustumPos + CameraPos) / 3 , leftPlane.normal);
             pieceHandler.AddPiece(newPiece);
-            allObjects.Add(newPiece);
+            allObjectsFromCut.Add(newPiece);
         }
         
         foreach (GameObject objToCut in ObjectsInRight)
@@ -230,7 +230,7 @@ public class FrustumCutHandler : MonoBehaviour
                     intactObjects.Add(cloneObj);
                 }
             }
-            if(!allObjects.Contains(objToCut)) allObjects.Add(objToCut);
+            if(!allObjectsFromCut.Contains(objToCut)) allObjectsFromCut.Add(objToCut);
             
             CutPieceHandler pieceHandler = objToCut.GetComponent<CutPieceHandler>();
             if (!pieceHandler)
@@ -245,7 +245,7 @@ public class FrustumCutHandler : MonoBehaviour
                 if(pieceHandler.Pieces[i] == null ) continue;
                 GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i], (RightDownFrustumPos + RightUpFrustumPos + CameraPos) / 3 , rightPlane.normal);
                 pieceHandler.AddPiece(newPiece);
-                allObjects.Add(newPiece);
+                allObjectsFromCut.Add(newPiece);
             }
         }
         
@@ -266,7 +266,7 @@ public class FrustumCutHandler : MonoBehaviour
                     intactObjects.Add(cloneObj);
                 }
             }
-            if(!allObjects.Contains(objToCut)) allObjects.Add(objToCut);
+            if(!allObjectsFromCut.Contains(objToCut)) allObjectsFromCut.Add(objToCut);
             
             CutPieceHandler pieceHandler = objToCut.GetComponent<CutPieceHandler>();
             if (!pieceHandler)
@@ -281,7 +281,7 @@ public class FrustumCutHandler : MonoBehaviour
                 if(pieceHandler.Pieces[i] == null ) continue;
                 GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i], (LeftUpFrustumPos + RightUpFrustumPos + CameraPos) / 3 , topPlane.normal);
                 pieceHandler.AddPiece(newPiece);
-                allObjects.Add(newPiece);
+                allObjectsFromCut.Add(newPiece);
             }
         }
         
@@ -302,7 +302,7 @@ public class FrustumCutHandler : MonoBehaviour
                     intactObjects.Add(cloneObj);
                 }
             }
-            if(!allObjects.Contains(objToCut)) allObjects.Add(objToCut);
+            if(!allObjectsFromCut.Contains(objToCut)) allObjectsFromCut.Add(objToCut);
             
             CutPieceHandler pieceHandler = objToCut.GetComponent<CutPieceHandler>();
             if (!pieceHandler)
@@ -317,7 +317,7 @@ public class FrustumCutHandler : MonoBehaviour
                 if(pieceHandler.Pieces[i] == null ) continue;
                 GameObject newPiece = Cutter.Cut(pieceHandler.Pieces[i],(RightDownFrustumPos + LeftDownFrustumPos + CameraPos) / 3 , bottomPlane.normal);
                 pieceHandler.AddPiece(newPiece);
-                allObjects.Add(newPiece);
+                allObjectsFromCut.Add(newPiece);
             }
         }
         
@@ -341,14 +341,14 @@ public class FrustumCutHandler : MonoBehaviour
         
              foreach(var intactObj in intactObjects) intactObj.SetActive(true);
              //Destroy objects contain cut pieces in all object, just only display by Intact Objects above instead of pieces
-             foreach (var obj in allObjects) if (obj != null) Destroy(obj);
+             foreach (var obj in allObjectsFromCut) if (obj != null) Destroy(obj);
              
          }
          else 
          {
              if(activeFilm != null) activeFilm.ActivateFilm();//Display Placeholder Mesh Objects in frame and end relative with camera
 
-             foreach (var obj in allObjects) if(obj != null) Destroy(obj.GetComponent<CutPieceHandler>());
+             foreach (var obj in allObjectsFromCut) if(obj != null) Destroy(obj.GetComponent<CutPieceHandler>());
              
              foreach (var obj in ObjectsInFrustum)
              {

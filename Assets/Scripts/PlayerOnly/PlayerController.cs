@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public GameObject rewindUI;
     public GameObject PauseUI;
 
+
     private CharacterController characterController;
     private Vector3 velocity;
     private bool canMove = true;
@@ -53,8 +54,10 @@ public class PlayerController : MonoBehaviour
     [Header("Interaction Settings")]
     public float interactDistance = 2f;    
     public Vector3 boxHalfExtents = new Vector3(0.5f, 0.5f, 0.5f); 
+
     public LayerMask interactLayer;
     private PhotoCamera CameraPolaroid;
+
 
     public bool bPausing;
     private void Start()
@@ -64,7 +67,9 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rwObj = GetComponent<RewindableObject>();
+
         CameraPolaroid = GetComponent<PhotoCamera>();
+
         if (rewindUI != null) rewindUI.SetActive(false);
     }
 
@@ -122,6 +127,7 @@ public class PlayerController : MonoBehaviour
         
         playerInput.actions["Pause"].performed -= PauseGame;
         
+
     }
 
     private void Update()

@@ -338,7 +338,7 @@ public class Cutter : MonoBehaviour
         List<Vector3> vertices = new List<Vector3>();
         List<Vector3> polygon = new List<Vector3>();
 
-        for (int i = 0; i < _addedVertices.Count; i++)
+        for (int i = 0; i < _addedVertices.Count - 1; i++)
         {
             if(!vertices.Contains(_addedVertices[i]))
             {

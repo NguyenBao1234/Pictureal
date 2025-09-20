@@ -97,9 +97,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Rotate",
+                    "name": "Rewind",
                     "type": "Button",
-                    "id": "a6ec8bb6-cb69-4c0a-a6c5-7a12e959e527",
+                    "id": "40ed2449-2675-442e-a932-d9cd31080f09",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -505,23 +505,12 @@
                 },
                 {
                     "name": "",
-                    "id": "a31f18d4-8d8b-4bf5-ab0a-4792ef1c690f",
+                    "id": "225fe48e-79bf-44bd-946a-10dcdeb9374e",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4b6553b1-4683-44d1-9baa-275f5feba757",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Rotate",
+                    "groups": "",
+                    "action": "Rewind",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;   // Thêm thư viện UI
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -9,9 +10,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] footstepClips; // mảng tiếng bước chân
     public float walkStepInterval = 0.5f; // khoảng cách thời gian giữa các bước khi đi
     public float runStepInterval = 0.3f;  // khi chạy
-
-    private float stepCycle = 0f;
-    private float nextStep = 0f;
     private float stepTimer = 0f;
 
     [Header("Movement Settings")]
@@ -32,9 +30,11 @@ public class PlayerController : MonoBehaviour
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
 
+    [Header("Rewind UI")]
+    public GameObject rewindUI; // UI chứa icon + chữ
+
     private CharacterController characterController;
     private Vector3 velocity;
-    private float rotationX = 0;
     private bool canMove = true;
     private float targetSpeed;
 
@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 lookInput;
     private bool bCrouching;
     private PlayerInput playerInput;
+    private bool bRewinding = false;
+    private RewindableObject rwObj;
 
     [Header("Interaction Settings")]
     public float interactDistance = 2f;        // khoảng cách quét
@@ -55,6 +57,10 @@ public class PlayerController : MonoBehaviour
         targetSpeed = walkSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        rwObj = GetComponent<RewindableObject>();
+
+        if (rewindUI != null)
+            rewindUI.SetActive(false); // ban đầu tắt UI
     }
 
     private void OnEnable()
@@ -73,7 +79,12 @@ public class PlayerController : MonoBehaviour
 
         playerInput.actions["Interact"].performed += OnInteract;
         playerInput.actions["Jump"].performed += OnJump;
+        
+        playerInput.actions["Rewind"].performed += StartRewind;
+        playerInput.actions["Rewind"].canceled += StopRewind;
+
     }
+
 
     private void OnDisable()
     {
@@ -144,6 +155,7 @@ public class PlayerController : MonoBehaviour
     // --- Logic di chuyển ---
     private void HandleMovement()
     {
+        if (!canMove || bRewinding) return;
         Vector3 inputDir = (transform.forward * moveInput.y + transform.right * moveInput.x).normalized;
 
         if (characterController.isGrounded)
@@ -151,8 +163,7 @@ public class PlayerController : MonoBehaviour
             velocity.x = inputDir.x * targetSpeed;
             velocity.z = inputDir.z * targetSpeed;
 
-            if (velocity.y < 0f)
-                velocity.y = -2f; // giữ player dính đất
+            if (velocity.y < 0f) velocity.y = -2f;
         }
         else
         {
@@ -161,12 +172,31 @@ public class PlayerController : MonoBehaviour
             velocity.z = Mathf.Lerp(velocity.z, inputDir.z * targetSpeed, airControlPercent * Time.deltaTime);
 
             // gravity
-            if (velocity.y > 0)
-                velocity.y += gravity * Time.deltaTime;
-            else
-                velocity.y += gravity * fallMultiplier * Time.deltaTime;
+            if (velocity.y > 0) velocity.y += gravity * Time.deltaTime;
+            else velocity.y += gravity * fallMultiplier * Time.deltaTime;
         }
     }
+    
+    private void StartRewind(InputAction.CallbackContext obj)
+    {
+        if (rwObj == null) return;
+        rwObj.SetRewind(true);
+        bRewinding = true;
+
+        if (rewindUI != null)
+            rewindUI.SetActive(true);
+    }
+
+    private void StopRewind(InputAction.CallbackContext obj)
+    {
+        if (rwObj == null) return;
+        rwObj.SetRewind(false);
+        bRewinding = false;
+
+        if (rewindUI != null)
+            rewindUI.SetActive(false);
+    }
+
 
     private void ApplyMovement()
     {
@@ -175,8 +205,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleLook()
     {
-        if (!canMove) return;
-
+        if (bRewinding) return;
+        float rotationX = cameraHolder.localRotation.eulerAngles.x;
+        if(rotationX > 180) rotationX -= 360;
         rotationX += -lookInput.y * lookSpeed * 0.1f;
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
         cameraHolder.localRotation = Quaternion.Euler(rotationX, 0, 0);
@@ -249,7 +280,7 @@ public class PlayerController : MonoBehaviour
         Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
         if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, 2f))
         {
-            if (hit.collider.CompareTag("Default"))
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Default"))
             {
                 PlayFootstep();
             }

@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public float crouchSpeed = 3f;
 
     [Header("Rewind UI")]
-    public GameObject rewindUI; // UI chứa icon + chữ
+    public GameObject rewindUI;
 
     private CharacterController characterController;
     private Vector3 velocity;
@@ -47,9 +47,9 @@ public class PlayerController : MonoBehaviour
     private RewindableObject rwObj;
 
     [Header("Interaction Settings")]
-    public float interactDistance = 2f;        // khoảng cách quét
-    public Vector3 boxHalfExtents = new Vector3(0.5f, 0.5f, 0.5f); // kích thước box
-    public LayerMask interactLayer;            // layer cho object có thể tương tác
+    public float interactDistance = 2f;    
+    public Vector3 boxHalfExtents = new Vector3(0.5f, 0.5f, 0.5f); 
+    public LayerMask interactLayer;            
 
     private void Start()
     {
@@ -59,8 +59,7 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         rwObj = GetComponent<RewindableObject>();
 
-        if (rewindUI != null)
-            rewindUI.SetActive(false); // ban đầu tắt UI
+        if (rewindUI != null) rewindUI.SetActive(false);
     }
 
     private void OnEnable()
@@ -102,6 +101,9 @@ public class PlayerController : MonoBehaviour
 
         playerInput.actions["Interact"].performed -= OnInteract;
         playerInput.actions["Jump"].performed -= OnJump;
+        
+        playerInput.actions["Rewind"].performed -= StartRewind;
+        playerInput.actions["Rewind"].canceled -= StopRewind;
     }
 
     private void Update()
@@ -183,8 +185,7 @@ public class PlayerController : MonoBehaviour
         rwObj.SetRewind(true);
         bRewinding = true;
 
-        if (rewindUI != null)
-            rewindUI.SetActive(true);
+        if (rewindUI != null) rewindUI.SetActive(true);
     }
 
     private void StopRewind(InputAction.CallbackContext obj)
@@ -193,8 +194,7 @@ public class PlayerController : MonoBehaviour
         rwObj.SetRewind(false);
         bRewinding = false;
 
-        if (rewindUI != null)
-            rewindUI.SetActive(false);
+        if (rewindUI != null) rewindUI.SetActive(false);
     }
 
 

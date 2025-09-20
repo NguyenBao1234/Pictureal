@@ -23,7 +23,7 @@ public class RewindableObject : MonoBehaviour
         if (RecordedTransforms.Count > (8 / Time.fixedDeltaTime)) RecordedTransforms.RemoveAt(RecordedTransforms.Count - 1);
         
         var transformData = new TransformData(transform.position, transform.rotation);
-        Debug.Log(transformData.rotation);
+
         PlayerController playerController = GetComponent<PlayerController>();
         if (playerController != null) transformData.rotation.x = playerController.cameraHolder.localRotation.x;
         

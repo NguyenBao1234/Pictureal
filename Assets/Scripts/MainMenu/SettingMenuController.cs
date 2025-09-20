@@ -32,6 +32,8 @@ public class SettingsMenuController : MonoBehaviour
     private string[] resolutionOptions = { "1280x720", "1920x1080", "2560x1440" };
     private int currentResolutionIndex = 1; // mặc định 1080p
 
+    public GameObject PrevUI;
+
     void Start()
     {
         Application.targetFrameRate = fpsOptions[currentFpsIndex];
@@ -146,5 +148,11 @@ public class SettingsMenuController : MonoBehaviour
         shadowValueLabel.text = shadowOptions[currentShadowIndex];
         overallValueLabel.text = overallOptions[currentOverallIndex];
         resolutionValueLabel.text = resolutionOptions[currentResolutionIndex];
+    }
+
+    public void OnBack()
+    {
+        PrevUI.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

@@ -23,19 +23,8 @@ public class PhotoCamera : MonoBehaviour
         PolaroidRenderCam.gameObject.SetActive(false);
         photoPrefab.SetActive(false);//refactoring later
     }
-    private void OnEnable()
-    {
-        if(!playerInput) playerInput = GetComponent<PlayerInput>();
-        playerInput.actions["Action"].performed += OnAction;
-        playerInput.actions["SubAction"].performed += OnSubAction;
-    }
-    
-    void Update()
-    {
-        
-    }
 
-    private void OnAction(InputAction.CallbackContext obj)
+    public void OnAction()
     {
         if (bLookingViaCamera) CapturePhoto();
         else
@@ -52,10 +41,9 @@ public class PhotoCamera : MonoBehaviour
             bLookingViaCamera = true;
             photoPrefab.SetActive(true);
         }
-        Debug.Log("Remain Films:"+remainingFilm);
     }
     
-    void OnSubAction(InputAction.CallbackContext ctx)
+    public void OnSubAction()
     {
         if (bLookingViaCamera)
         {
@@ -79,11 +67,5 @@ public class PhotoCamera : MonoBehaviour
         }
     }
     
-    private void OnDisable()
-    {
-        playerInput.actions["Action"].performed -= OnAction;
-        playerInput.actions["SubAction"].performed -= OnSubAction;
-    }
-
     public void AddToRemainingFilm(int inAmount) {remainingFilm += inAmount;}
 }

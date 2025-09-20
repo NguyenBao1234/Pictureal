@@ -119,59 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &10346396
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 10346397}
-  - component: {fileID: 10346398}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &10346397
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10346396}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 463, y: 234.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &10346398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10346396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0928f533112d9a7479718feac26831ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
-  mainMenuPanel: {fileID: 1804866280}
-  settingMenuPanel: {fileID: 73992604}
-  flashImage: {fileID: 2029785473}
-  fadeImage: {fileID: 1828361535}
-  flashHold: 0.05
-  delayBeforeFade: 0
-  fadeDuration: 1
-  blackHold: 1
-  sceneToLoad: SampleScene
 --- !u!1 &47659543
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10346398}
+      - m_Target: {fileID: 1804866284}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnSetting
         m_Mode: 1
@@ -531,6 +478,7 @@ GameObject:
   - component: {fileID: 73992605}
   - component: {fileID: 73992607}
   - component: {fileID: 73992606}
+  - component: {fileID: 73992608}
   m_Layer: 5
   m_Name: SettingMenuPanel
   m_TagString: Untagged
@@ -600,6 +548,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73992604}
   m_CullTransparentMesh: 1
+--- !u!114 &73992608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73992604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a76124726a34b408177509e7cef885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingsMenuController
+  fpsValueLabel: {fileID: 795286781}
+  shadowValueLabel: {fileID: 61317481}
+  overallValueLabel: {fileID: 511661648}
+  lowURP: {fileID: 11400000, guid: 4b83569d67af61e458304325a23e5dfd, type: 2}
+  mediumURP: {fileID: 0}
+  highURP: {fileID: 0}
+  ultraURP: {fileID: 0}
+  resolutionValueLabel: {fileID: 705613736}
+  PrevUI: {fileID: 0}
 --- !u!1 &89493704
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +652,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416038019}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: IncreaseResolution
         m_Mode: 1
@@ -895,7 +864,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416038019}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: DecreaseShadow
         m_Mode: 1
@@ -945,58 +914,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392072297}
   m_CullTransparentMesh: 1
---- !u!1 &416038018
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 416038020}
-  - component: {fileID: 416038019}
-  m_Layer: 0
-  m_Name: SettingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &416038019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416038018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a76124726a34b408177509e7cef885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SettingsMenuController
-  fpsValueLabel: {fileID: 795286781}
-  shadowValueLabel: {fileID: 61317481}
-  overallValueLabel: {fileID: 511661648}
-  lowURP: {fileID: 11400000, guid: 4b83569d67af61e458304325a23e5dfd, type: 2}
-  mediumURP: {fileID: 0}
-  highURP: {fileID: 0}
-  ultraURP: {fileID: 0}
-  resolutionValueLabel: {fileID: 705613736}
---- !u!4 &416038020
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416038018}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -527.82184, y: 0, z: 12262.448}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &480909922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +997,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10346398}
+      - m_Target: {fileID: 1804866284}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnQuit
         m_Mode: 1
@@ -1213,7 +1130,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416038019}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: IncreaseShadow
         m_Mode: 1
@@ -1719,7 +1636,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416038019}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: DecreaseResolution
         m_Mode: 1
@@ -3795,7 +3712,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416038019}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: IncreaseFPS
         m_Mode: 1
@@ -4007,8 +3924,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10346398}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+      - m_Target: {fileID: 73992608}
+        m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: OnBack
         m_Mode: 1
         m_Arguments:
@@ -4140,7 +4057,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416038019}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: DecreaseFPS
         m_Mode: 1
@@ -4273,7 +4190,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416038019}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: IncreaseQuality
         m_Mode: 1
@@ -4606,6 +4523,7 @@ GameObject:
   - component: {fileID: 1804866281}
   - component: {fileID: 1804866283}
   - component: {fileID: 1804866282}
+  - component: {fileID: 1804866284}
   m_Layer: 5
   m_Name: MainMenuPanel
   m_TagString: Untagged
@@ -4633,7 +4551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00061035156, y: 0.000579834}
+  m_AnchoredPosition: {x: 0.00061035156, y: 0.00061035156}
   m_SizeDelta: {x: 506.53, y: 252.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1804866282
@@ -4674,6 +4592,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804866280}
   m_CullTransparentMesh: 1
+--- !u!114 &1804866284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804866280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0928f533112d9a7479718feac26831ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
+  mainMenuPanel: {fileID: 1804866280}
+  settingMenuPanel: {fileID: 73992608}
+  flashImage: {fileID: 2029785473}
+  fadeImage: {fileID: 1828361535}
+  flashHold: 0.05
+  delayBeforeFade: 0
+  fadeDuration: 1
+  blackHold: 1
+  sceneToLoad: SampleScene
 --- !u!1 &1828361534
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,7 +5391,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416038019}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenuController, Assembly-CSharp
         m_MethodName: DecreaseQuality
         m_Mode: 1
@@ -5721,7 +5660,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10346398}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnPrototype
         m_Mode: 1
@@ -5854,7 +5793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10346398}
+      - m_Target: {fileID: 1804866284}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnNewGame
         m_Mode: 1
@@ -5992,5 +5931,3 @@ SceneRoots:
   - {fileID: 1193163221}
   - {fileID: 556379800}
   - {fileID: 1011181686}
-  - {fileID: 10346397}
-  - {fileID: 416038020}

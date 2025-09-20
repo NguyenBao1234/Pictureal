@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;   // Thêm thư viện UI
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor; // Thêm thư viện UI
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    
     [Header("Footstep Settings")]
     public AudioSource audioSource;
     public AudioClip[] footstepClips; // mảng tiếng bước chân
@@ -30,8 +33,9 @@ public class PlayerController : MonoBehaviour
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
 
-    [Header("Rewind UI")]
+    [Header("UI")]
     public GameObject rewindUI;
+    public GameObject PauseUI;
 
     private CharacterController characterController;
     private Vector3 velocity;
@@ -49,8 +53,10 @@ public class PlayerController : MonoBehaviour
     [Header("Interaction Settings")]
     public float interactDistance = 2f;    
     public Vector3 boxHalfExtents = new Vector3(0.5f, 0.5f, 0.5f); 
-    public LayerMask interactLayer;            
+    public LayerMask interactLayer;
+    private PhotoCamera CameraPolaroid;
 
+    public bool bPausing;
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -58,7 +64,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rwObj = GetComponent<RewindableObject>();
-
+        CameraPolaroid = GetComponent<PhotoCamera>();
         if (rewindUI != null) rewindUI.SetActive(false);
     }
 
@@ -76,14 +82,19 @@ public class PlayerController : MonoBehaviour
         playerInput.actions["Crouch"].performed += OnCrouch;
         playerInput.actions["Crouch"].canceled += OnCrouch;
 
-        playerInput.actions["Interact"].performed += OnInteract;
         playerInput.actions["Jump"].performed += OnJump;
+        
+        playerInput.actions["Interact"].performed += OnInteract;
+        
+        playerInput.actions["Action"].performed += OnAction;
+        playerInput.actions["SubAction"].performed += OnSubAction;
         
         playerInput.actions["Rewind"].performed += StartRewind;
         playerInput.actions["Rewind"].canceled += StopRewind;
-
+        
+        playerInput.actions["Pause"].performed += PauseGame;
+        
     }
-
 
     private void OnDisable()
     {
@@ -99,15 +110,23 @@ public class PlayerController : MonoBehaviour
         playerInput.actions["Crouch"].performed -= OnCrouch;
         playerInput.actions["Crouch"].canceled -= OnCrouch;
 
-        playerInput.actions["Interact"].performed -= OnInteract;
         playerInput.actions["Jump"].performed -= OnJump;
+        
+        playerInput.actions["Interact"].performed -= OnInteract;
+                
+        playerInput.actions["Action"].performed -= OnAction;
+        playerInput.actions["SubAction"].performed -= OnSubAction;
         
         playerInput.actions["Rewind"].performed -= StartRewind;
         playerInput.actions["Rewind"].canceled -= StopRewind;
+        
+        playerInput.actions["Pause"].performed -= PauseGame;
+        
     }
 
     private void Update()
     {
+        if (bPausing) return;
         HandleMovement();
         ApplyMovement();
         HandleLook();
@@ -118,13 +137,28 @@ public class PlayerController : MonoBehaviour
     // === Input Callbacks ===
     private void OnInteract(InputAction.CallbackContext ctx)
     {
+        if (bPausing) return;
         AttemptInteract();
     }
+    
+    private void OnAction(InputAction.CallbackContext ctx)
+    {
+        if (bPausing) return;
+        CameraPolaroid.OnAction();
+    }
+
+    private void OnSubAction(InputAction.CallbackContext ctx)
+    {
+        if (bPausing) return;
+        CameraPolaroid.OnSubAction();
+    }
+
     private void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
     private void OnLook(InputAction.CallbackContext ctx) => lookInput = ctx.ReadValue<Vector2>();
 
     public void OnSprint(InputAction.CallbackContext ctx)
     {
+        if (bPausing) return;
         if (bCrouching) return;
         targetSpeed = ctx.performed ? runSpeed : walkSpeed;
         Debug.Log("Sprint!");
@@ -132,6 +166,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnCrouch(InputAction.CallbackContext ctx)
     {
+        if (bPausing) return;
         if (ctx.performed)
         {
             bCrouching = true;
@@ -148,6 +183,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext ctx)
     {
+        if (bPausing) return;
         if (ctx.performed && characterController.isGrounded && canMove)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -181,6 +217,7 @@ public class PlayerController : MonoBehaviour
     
     private void StartRewind(InputAction.CallbackContext obj)
     {
+        if (bPausing) return;
         if (rwObj == null) return;
         rwObj.SetRewind(true);
         bRewinding = true;
@@ -190,6 +227,7 @@ public class PlayerController : MonoBehaviour
 
     private void StopRewind(InputAction.CallbackContext obj)
     {
+        if (bPausing) return;
         if (rwObj == null) return;
         rwObj.SetRewind(false);
         bRewinding = false;
@@ -197,6 +235,14 @@ public class PlayerController : MonoBehaviour
         if (rewindUI != null) rewindUI.SetActive(false);
     }
 
+    
+    private void PauseGame(InputAction.CallbackContext ctx)
+    {
+        bPausing = !bPausing;
+        Cursor.lockState = bPausing ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = bPausing;
+        PauseUI.SetActive(bPausing);
+    }
 
     private void ApplyMovement()
     {

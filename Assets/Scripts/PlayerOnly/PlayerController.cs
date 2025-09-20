@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour
         Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
         if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, 2f))
         {
-            if (hit.collider.CompareTag("Ground"))
+            if (hit.collider.CompareTag("Default"))
             {
                 PlayFootstep();
             }

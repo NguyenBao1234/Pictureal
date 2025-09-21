@@ -13,7 +13,7 @@ public class PortalLevelDoor : MonoBehaviour
     private void OnEnable()
     {
         //If Null error is here, create game object with name matching parameter
-        SurrealRoom = GameObject.Find("SurrealRoom");
+        SurrealRoom = transform.parent.transform.Find("SurrealRoom").gameObject;
     }
 
     private void OnTriggerEnter(Collider other)

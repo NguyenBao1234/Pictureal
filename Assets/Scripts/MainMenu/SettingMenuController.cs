@@ -9,7 +9,6 @@ public class SettingsMenuController : MonoBehaviour
     public TextMeshProUGUI fpsValueLabel;    // Ở giữa (giá trị cap chọn)
     private int[] fpsOptions = { 30, 60, 90, 120 };
     private int currentFpsIndex = 1; // mặc định 60
-    private float deltaTime = 0.0f;
 
     [Header("Shadow Settings")]
     public TextMeshProUGUI shadowValueLabel;

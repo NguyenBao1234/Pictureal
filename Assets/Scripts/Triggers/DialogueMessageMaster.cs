@@ -45,6 +45,7 @@ public class DialogueMessageMaster : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.spatialBlend = 0;
             audioSource.loop = false;
             audioSource.playOnAwake = false;
         }

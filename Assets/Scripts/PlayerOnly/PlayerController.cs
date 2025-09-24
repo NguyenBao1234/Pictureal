@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     
     [Header("Footstep Settings")]
-    public AudioSource audioSource;
+    public AudioSource FootstepAudioSource;
     public AudioClip[] footstepClips; // mảng tiếng bước chân
     public float walkStepInterval = 0.5f; // khoảng cách thời gian giữa các bước khi đi
     public float runStepInterval = 0.3f;  // khi chạy
@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
         rwObj = GetComponent<RewindableObject>();
         CameraPolaroid = GetComponent<PhotoCamera>();
         if (rewindUI != null) rewindUI.SetActive(false);
+        if(!FootstepAudioSource) FootstepAudioSource = gameObject.AddComponent<AudioSource>();
+        FootstepAudioSource.spatialBlend = 0;
     }
 
     private void OnEnable()
@@ -368,7 +370,9 @@ public class PlayerController : MonoBehaviour
         } while (index == lastIndex && footstepClips.Length > 1);
 
         lastIndex = index;
-        audioSource.PlayOneShot(footstepClips[index]);
+        FootstepAudioSource.volume = Random.Range(0.7f, 1);
+        FootstepAudioSource.pitch = Random.Range(0.7f, 1.3f);
+        FootstepAudioSource.PlayOneShot(footstepClips[index]);
     }
 }
 

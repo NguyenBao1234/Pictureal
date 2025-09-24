@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using Cursor = UnityEngine.Cursor; // Thêm thư viện UI
+using Cursor = UnityEngine.Cursor;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float stepTimer = 0f;
 
     [Header("Movement Settings")]
+    public Joystick joystickInput;
     public float walkSpeed = 3f;
     public float runSpeed = 6f;
     public float jumpHeight = 1f;
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public Transform cameraHolder;
     public float lookSpeed = 2f;
     public float lookXLimit = 85f;
+    public TouchLook touchLookInput;
 
     [Header("Crouch Settings")]
     public float defaultHeight = 2f;
@@ -61,8 +65,8 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         targetSpeed = walkSpeed;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         rwObj = GetComponent<RewindableObject>();
         CameraPolaroid = GetComponent<PhotoCamera>();
         if (rewindUI != null) rewindUI.SetActive(false);
@@ -194,7 +198,11 @@ public class PlayerController : MonoBehaviour
     private void HandleMovement()
     {
         if (!canMove || bRewinding) return;
-        Vector3 inputDir = (transform.forward * moveInput.y + transform.right * moveInput.x).normalized;
+
+        float moveFwdFactor = joystickInput ? Math.Clamp(moveInput.y + joystickInput.Vertical, -1, 1 ) : moveInput.y;
+        float moveRtFactor = joystickInput ? Math.Clamp(moveInput.x + joystickInput.Horizontal, -1, 1 ) : moveInput.x;
+        
+        Vector3 inputDir = (transform.forward * moveFwdFactor + transform.right * moveRtFactor).normalized;
 
         if (characterController.isGrounded)
         {
@@ -239,11 +247,16 @@ public class PlayerController : MonoBehaviour
     private void PauseGame(InputAction.CallbackContext ctx)
     {
         bPausing = !bPausing;
-        Cursor.lockState = bPausing ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = bPausing;
-        PauseUI.SetActive(bPausing);
+        SetPauseGame(bPausing);
     }
 
+    public void SetPauseGame(bool bInPause)
+    {
+        Cursor.lockState = bInPause ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = bInPause;
+        PauseUI.SetActive(bInPause);
+        joystickInput.transform.parent.gameObject.SetActive(!bInPause);
+    }
     private void ApplyMovement()
     {
         characterController.Move(velocity * Time.deltaTime);
@@ -252,12 +265,16 @@ public class PlayerController : MonoBehaviour
     private void HandleLook()
     {
         if (bRewinding) return;
-        float rotationX = cameraHolder.localRotation.eulerAngles.x;
-        if(rotationX > 180) rotationX -= 360;
-        rotationX += -lookInput.y * lookSpeed * 0.1f;
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        cameraHolder.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, lookInput.x * lookSpeed * 0.1f, 0);
+        float pitchCamera = cameraHolder.localRotation.eulerAngles.x;
+        if(pitchCamera > 180) pitchCamera -= 360;
+        
+        float deltaLookPitch = touchLookInput? (lookInput.y + touchLookInput.GetInput().y) : lookInput.y;
+        float deltaLookYaw = touchLookInput? (lookInput.x + touchLookInput.GetInput().x) : lookInput.x;
+        
+        pitchCamera += -deltaLookPitch * lookSpeed * 0.1f;
+        pitchCamera = Mathf.Clamp(pitchCamera, -lookXLimit, lookXLimit);
+        cameraHolder.localRotation = Quaternion.Euler(pitchCamera, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, deltaLookYaw * lookSpeed * 0.1f, 0);
     }
 
     public void AttemptInteract()

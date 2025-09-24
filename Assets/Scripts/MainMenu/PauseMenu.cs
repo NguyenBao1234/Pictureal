@@ -10,8 +10,7 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(false);
         PlayerController Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Player.bPausing =  false;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Player.SetPauseGame(false);
     }
     
     public void OpenSetting()

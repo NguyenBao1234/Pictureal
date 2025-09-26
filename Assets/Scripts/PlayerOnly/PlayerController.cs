@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 boxHalfExtents = new Vector3(0.5f, 0.5f, 0.5f); 
     public LayerMask interactLayer;
     private PhotoCamera CameraPolaroid;
+    public bool bPickedPolaroid;
+    public PhotoCamera GetCameraPolaroid() => CameraPolaroid;
 
     public bool bPausing;
     private void Start()
@@ -72,6 +74,8 @@ public class PlayerController : MonoBehaviour
         if (rewindUI != null) rewindUI.SetActive(false);
         if(!FootstepAudioSource) FootstepAudioSource = gameObject.AddComponent<AudioSource>();
         FootstepAudioSource.spatialBlend = 0;
+        FootstepAudioSource.playOnAwake = false;
+        if(!bPickedPolaroid) CameraPolaroid.PolaroidCameraModel.SetActive(false);
     }
 
     private void OnEnable()
@@ -134,12 +138,11 @@ public class PlayerController : MonoBehaviour
     {
         if (bPausing) return;
         HandleMovement();
-        ApplyMovement();
         HandleLook();
+        ApplyMovement();
         HandleFootsteps();
-
     }
-
+    
     // === Input Callbacks ===
     private void OnInteract(InputAction.CallbackContext ctx)
     {
@@ -147,18 +150,21 @@ public class PlayerController : MonoBehaviour
         AttemptInteract();
     }
     
-    private void OnAction(InputAction.CallbackContext ctx)
+    private void OnAction(InputAction.CallbackContext ctx) => DoAction();
+    public void TouchAction() =>DoAction();
+    private void DoAction()
     {
         if (bPausing) return;
-        CameraPolaroid.OnAction();
+        if(bPickedPolaroid) CameraPolaroid.OnAction();
     }
 
-    private void OnSubAction(InputAction.CallbackContext ctx)
+    private void OnSubAction(InputAction.CallbackContext ctx) => DoSubAction();
+    public void TouchSubAction() =>DoSubAction();
+    private void DoSubAction()
     {
         if (bPausing) return;
-        CameraPolaroid.OnSubAction();
+        if(bPickedPolaroid) CameraPolaroid.OnSubAction();
     }
-
     private void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
     private void OnLook(InputAction.CallbackContext ctx) => lookInput = ctx.ReadValue<Vector2>();
 
@@ -225,33 +231,29 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    private void StartRewind(InputAction.CallbackContext obj)
+    private void StartRewind(InputAction.CallbackContext obj) => SetRewind(true);
+    private void StopRewind(InputAction.CallbackContext obj) => SetRewind(false);
+    public void TouchStartRewind() => SetRewind(true);  
+    public void TouchStopRewind() => SetRewind(false);
+    private void SetRewind(bool bRewind)
     {
         if (bPausing) return;
         if (rwObj == null) return;
-        rwObj.SetRewind(true);
-        bRewinding = true;
+        rwObj.SetRewind(bRewind);
+        bRewinding = bRewind;
 
-        if (rewindUI != null) rewindUI.SetActive(true);
-    }
-
-    private void StopRewind(InputAction.CallbackContext obj)
-    {
-        if (bPausing) return;
-        if (rwObj == null) return;
-        rwObj.SetRewind(false);
-        bRewinding = false;
-
-        if (rewindUI != null) rewindUI.SetActive(false);
+        if (rewindUI != null) rewindUI.SetActive(bRewind);
     }
 
     
-    private void PauseGame(InputAction.CallbackContext ctx)
+    private void PauseGame(InputAction.CallbackContext ctx) => DoPauseGame();
+    public void TouchPauseGame() => DoPauseGame();
+
+    private void DoPauseGame()
     {
         bPausing = !bPausing;
         SetPauseGame(bPausing);
     }
-
     public void SetPauseGame(bool bInPause)
     {
         Cursor.lockState = bInPause ? CursorLockMode.None : CursorLockMode.Locked;
@@ -295,7 +297,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    
     // Debug hiển thị box trong Scene View
     private void OnDrawGizmosSelected()
     {

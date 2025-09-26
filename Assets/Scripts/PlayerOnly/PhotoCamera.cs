@@ -7,13 +7,16 @@ public class PhotoCamera : MonoBehaviour
 {
     public FrustumCutHandler frustumCutHandler;
 
-    private Camera PolaroidRenderCam;       // Camera phụ
-    public GameObject photoPrefab; // Prefab cái ảnh (Quad cầm tay)
+    private Camera PolaroidRenderCam;
+    public GameObject photoPrefab;
+    public GameObject PolaroidCameraModel;
     
     private Texture2D capturedTex;
     private PlayerInput playerInput;
     private bool bTakenPhoto;
+    public bool IsTakenPhoto() => bTakenPhoto;
     private bool bLookingViaCamera = false;
+    public bool  IsLookingViaCamera() => bLookingViaCamera;
     private int remainingFilm = 5;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,11 +38,13 @@ public class PhotoCamera : MonoBehaviour
                 frustumCutHandler.Cut(false);
                 bTakenPhoto = false;
                 photoPrefab.SetActive(false);
+                PolaroidCameraModel.gameObject.SetActive(true);
                 return;
             }
             PolaroidRenderCam.gameObject.SetActive(true);
             bLookingViaCamera = true;
             photoPrefab.SetActive(true);
+            PolaroidCameraModel.SetActive(false);
         }
     }
     
@@ -50,6 +55,7 @@ public class PhotoCamera : MonoBehaviour
             photoPrefab.SetActive(false);
             bLookingViaCamera = false;
             PolaroidRenderCam.gameObject.SetActive(false);
+            PolaroidCameraModel.gameObject.SetActive(true);
         }
     }
     void CapturePhoto()

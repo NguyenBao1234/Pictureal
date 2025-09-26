@@ -348,7 +348,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5000
+  m_ColorTemperature: 8596
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -435,6 +435,10 @@ PrefabInstance:
       propertyPath: touchLookInput
       value: 
       objectReference: {fileID: 1915473209}
+    - target: {fileID: 5973630139529373915, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
+      propertyPath: bPickedPolaroid
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6617766732082286478, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.802
@@ -629,8 +633,9 @@ GameObject:
   - component: {fileID: 857736484}
   - component: {fileID: 857736483}
   - component: {fileID: 857736487}
+  - component: {fileID: 857736488}
   m_Layer: 0
-  m_Name: SmallBoxFloat
+  m_Name: TriggerNPCVoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,11 +656,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0214245, y: 0.9999999, z: 1}
+  m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0.010712266, y: 0, z: 0}
 --- !u!23 &857736484
 MeshRenderer:
@@ -722,8 +727,8 @@ Transform:
   m_GameObject: {fileID: 857736482}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.397, y: 1.547, z: -0.439}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.4, y: -2.054, z: -0.439}
+  m_LocalScale: {x: 0.15, y: 1, z: 0.19}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -755,6 +760,44 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &857736488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857736482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66031bfbe51fb1746849142f4fa55fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueMessageMaster
+  uiText: {fileID: 919277667}
+  entries:
+  - message: Hello
+    durationAfter: 2
+  - message: "T\xF4i l\xE0 NPC \u1EA3o"
+    durationAfter: 2
+  - message: "R\u1EA5t vui g\u1EB7p b\u1EA1n"
+    durationAfter: 2
+  bAppendWord: 1
+  typingSpeed: 0.05
+  bTriggeredOnce: 0
+  charSound: {fileID: 8300000, guid: 8326cb619feecaf47879379e2401bd0b, type: 3}
+  charVolume: 0.6
+  skipSpaces: 1
+  charsPerSound: 1
+--- !u!114 &919277667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7246919610259965226, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
+  m_PrefabInstance: {fileID: 1328744070}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1153275327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6240249802224353106, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
@@ -1620,6 +1663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitSurrealDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 8303872780904719561, guid: 95a83191fecad3b48b8b2000397422ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8680293423928589939, guid: 95a83191fecad3b48b8b2000397422ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.13
@@ -1665,6 +1712,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95a83191fecad3b48b8b2000397422ba, type: 3}
+--- !u!1001 &7238574883181035575
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.417
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.077
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.737172
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783870510896923618, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596154875865602392, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
+      propertyPath: m_Name
+      value: PolaroidCameraPickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c59f6a9f0f0fe1a45bc453f55093641b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1683,3 +1787,4 @@ SceneRoots:
   - {fileID: 4980517073476193560}
   - {fileID: 1328744070}
   - {fileID: 436929214}
+  - {fileID: 7238574883181035575}

@@ -7,6 +7,7 @@ public class TimeRWManager : MonoBehaviour
 {
     private static TimeRWManager Instance;
     bool bRewinding = false;
+    public void SetRewind(bool bInRewind) => bRewinding = bInRewind;
     private float CurrentTime = 0;
     List<RewindableEvent> RewindableEvents = new List<RewindableEvent>();
 
@@ -35,16 +36,9 @@ public class TimeRWManager : MonoBehaviour
         //auto setup if only one in each level
         Instance = this;
     }
-
-    private void OnEnable()
-    {
-        PlayerInput playerInput = FindFirstObjectByType<PlayerInput>();
-        playerInput.actions["Rewind"].performed += ctx => { bRewinding = true;};
-        playerInput.actions["Rewind"].canceled += ctx => { bRewinding = false;};
-    }
+  
     
-    
-    const float TOLERANCE = 0.05f;
+    const float TOLERANCE = 0.1f;
     void FixedUpdate()
     {
         if (bRewinding)

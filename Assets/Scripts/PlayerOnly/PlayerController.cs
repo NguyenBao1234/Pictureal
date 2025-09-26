@@ -241,7 +241,7 @@ public class PlayerController : MonoBehaviour
         if (rwObj == null) return;
         rwObj.SetRewind(bRewind);
         bRewinding = bRewind;
-
+        TimeRWManager.GetInst().SetRewind(bRewind);
         if (rewindUI != null) rewindUI.SetActive(bRewind);
     }
 

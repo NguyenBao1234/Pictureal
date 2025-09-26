@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = -9.81f;
     public float fallMultiplier = 2.5f;
     public float airControlPercent = 0.5f;
+    private Coroutine StopRunRefreshRoutine;
 
     [Header("Look Settings")]
     public Transform cameraHolder;
@@ -61,8 +63,10 @@ public class PlayerController : MonoBehaviour
     private PhotoCamera CameraPolaroid;
     public bool bPickedPolaroid;
     public PhotoCamera GetCameraPolaroid() => CameraPolaroid;
+    private bool bPausing;
+    public bool GetPausing() => bPausing;
 
-    public bool bPausing;
+    public void SetPauseProperty(bool bInPause) => bPausing = bInPause;
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -168,14 +172,17 @@ public class PlayerController : MonoBehaviour
     private void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
     private void OnLook(InputAction.CallbackContext ctx) => lookInput = ctx.ReadValue<Vector2>();
 
-    public void OnSprint(InputAction.CallbackContext ctx)
+    private void OnSprint(InputAction.CallbackContext ctx)=> DoSprint();
+    public void TouchSprint() => DoSprint(); 
+    private void DoSprint()
     {
         if (bPausing) return;
         if (bCrouching) return;
-        targetSpeed = ctx.performed ? runSpeed : walkSpeed;
+        targetSpeed = runSpeed;
+        if (StopRunRefreshRoutine != null) StopCoroutine(StopRunRefreshRoutine);
+        StartCoroutine(StopRunSpeedRefresh());
         Debug.Log("Sprint!");
     }
-
     public void OnCrouch(InputAction.CallbackContext ctx)
     {
         if (bPausing) return;
@@ -193,15 +200,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnJump(InputAction.CallbackContext ctx)
+    private void OnJump(InputAction.CallbackContext ctx)
+    {
+        if(ctx.performed)ExecuteJump();
+    }
+    public void TouchJump() => ExecuteJump();
+    private void ExecuteJump()
     {
         if (bPausing) return;
-        if (ctx.performed && characterController.isGrounded && canMove)
+        if (characterController.isGrounded && canMove)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
-
     // --- Logic di chuyển ---
     private void HandleMovement()
     {
@@ -230,6 +241,19 @@ public class PlayerController : MonoBehaviour
             else velocity.y += gravity * fallMultiplier * Time.deltaTime;
         }
     }
+    private IEnumerator StopRunSpeedRefresh()
+    {
+        while (targetSpeed == runSpeed)
+        {
+            yield return new WaitForSeconds(1f);
+            if (characterController.velocity.magnitude < 0.1f)
+            {
+                targetSpeed = bCrouching ? crouchSpeed : walkSpeed;
+                break;
+            }
+        }
+        StopRunRefreshRoutine = null;
+    }
     
     private void StartRewind(InputAction.CallbackContext obj) => SetRewind(true);
     private void StopRewind(InputAction.CallbackContext obj) => SetRewind(false);
@@ -256,6 +280,7 @@ public class PlayerController : MonoBehaviour
     }
     public void SetPauseGame(bool bInPause)
     {
+        bPausing = bInPause;
         Cursor.lockState = bInPause ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = bInPause;
         PauseUI.SetActive(bInPause);

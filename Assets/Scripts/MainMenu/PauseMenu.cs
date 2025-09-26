@@ -9,7 +9,6 @@ public class PauseMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
         PlayerController Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        Player.bPausing =  false;
         Player.SetPauseGame(false);
     }
     

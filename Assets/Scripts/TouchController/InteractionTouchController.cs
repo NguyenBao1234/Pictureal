@@ -12,8 +12,14 @@ public class InteractionTouchController : MonoBehaviour
 
     public GameObject OpenPolaroidBtn;
     public GameObject ClosePolaroidBtn;
+    [Tooltip("Object contain buttons hidden when open polaroid")]
+    public GameObject ButtunBeyondPolaroid;
     
     public GameObject RewindBtn;
+    public Image PauseBtnImg;
+    public Sprite PauseImg;
+    public Sprite ContinueImg;
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,6 +40,7 @@ public class InteractionTouchController : MonoBehaviour
         Player.TouchAction();
         OpenPolaroidBtn.SetActive(false);
         ClosePolaroidBtn.SetActive(true);
+        if(ButtunBeyondPolaroid) ButtunBeyondPolaroid.SetActive(false);
     }
 
     public void OnSubActionTouch()
@@ -41,9 +48,11 @@ public class InteractionTouchController : MonoBehaviour
         Player.TouchSubAction();
         if (!Player.GetCameraPolaroid().IsTakenPhoto())
         {
+            //Only back to visible if player has not taken photo
             TakeShootBtn.SetActive(false);
             ClosePolaroidBtn.SetActive(false);
             OpenPolaroidBtn.SetActive(true);
+            if(ButtunBeyondPolaroid) ButtunBeyondPolaroid.SetActive(true);
         }
     }
 
@@ -57,10 +66,16 @@ public class InteractionTouchController : MonoBehaviour
             TakeShootBtn.SetActive(false);
             ClosePolaroidBtn.SetActive(false);
             OpenPolaroidBtn.SetActive(true);
+            if(ButtunBeyondPolaroid) ButtunBeyondPolaroid.SetActive(true);
         }
     }
 
-    public void OnPauseTouch() => Player.TouchPauseGame();
+    public void OnPauseTouch()
+    {
+        Player.TouchPauseGame();
+        if(Player.GetPausing()) PauseBtnImg.sprite = ContinueImg;
+        else  PauseBtnImg.sprite = PauseImg;
+    }
 
     public void OnRewindPressedTouch()
     {
@@ -78,5 +93,15 @@ public class InteractionTouchController : MonoBehaviour
     {
         OpenPolaroidBtn.SetActive(true);
         RewindBtn.SetActive(true);
+    }
+
+    public void OnJumpTouch()
+    {
+        Player.TouchJump();
+    }
+
+    public void OnSprintTouch()
+    {
+        Player.TouchSprint();
     }
 }

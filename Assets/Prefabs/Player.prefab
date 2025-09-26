@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 4570608913275263341}
   - component: {fileID: 1150807289952651840}
   - component: {fileID: 5020257044092332551}
+  - component: {fileID: 2373062626803458942}
   m_Layer: 3
   m_Name: PolaroidFilm
   m_TagString: Untagged
@@ -621,7 +622,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6565244608530375526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -665,6 +666,20 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &2373062626803458942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888376437929743816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
+  m_AspectMode: 3
+  m_AspectRatio: 1
 --- !u!1 &8348886338378467389
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,15 +707,15 @@ RectTransform:
   m_GameObject: {fileID: 8348886338378467389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.01, y: 4.01, z: 4.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6565244608530375526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1814.9999, y: -982}
+  m_SizeDelta: {x: 410, y: 320}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &6806399357573702452
 CanvasRenderer:

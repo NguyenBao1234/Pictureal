@@ -45,7 +45,9 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController characterController;
     private Vector3 velocity;
-    private bool canMove = true;
+    private bool bCanMove = true;
+    public bool GetCanMove() => bCanMove;
+    public void SetCanMove(bool bInCanMove) => bCanMove = bInCanMove;
     private float targetSpeed;
 
     // input state
@@ -208,7 +210,7 @@ public class PlayerController : MonoBehaviour
     private void ExecuteJump()
     {
         if (bPausing) return;
-        if (characterController.isGrounded && canMove)
+        if (characterController.isGrounded && bCanMove)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
@@ -216,7 +218,7 @@ public class PlayerController : MonoBehaviour
     // --- Logic di chuyển ---
     private void HandleMovement()
     {
-        if (!canMove || bRewinding) return;
+        if (!bCanMove || bRewinding) return;
 
         float moveFwdFactor = joystickInput ? Math.Clamp(moveInput.y + joystickInput.Vertical, -1, 1 ) : moveInput.y;
         float moveRtFactor = joystickInput ? Math.Clamp(moveInput.x + joystickInput.Horizontal, -1, 1 ) : moveInput.x;

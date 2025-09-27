@@ -14,21 +14,15 @@ public class PickDropHandler : MonoBehaviour
     private PlayerInput _playerInput;
     private InputAction _interactAction;
     private ObjectGrabbable _objectGrabbable;
-    
-    private void Awake()
-    {
-        _playerInput = transform.parent.gameObject.GetComponent<PlayerInput>();
-        _interactAction = _playerInput.actions["Interact"];
-    }
 
     private void OnEnable()
     {
-        _interactAction.performed += OnInteractGrab;
+        GetComponent<PlayerInput>().actions["Interact"].performed += OnInteractGrab;
     }
 
     private void OnDisable()
     {
-        _interactAction.performed -= OnInteractGrab;
+        GetComponent<PlayerInput>().actions["Interact"].performed -= OnInteractGrab;
     }
 
     private void OnInteractGrab(InputAction.CallbackContext context)

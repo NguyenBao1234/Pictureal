@@ -75,6 +75,14 @@ public class MainMenuController : MonoBehaviour
     
     public void OnQuit()
     {
+        StartCoroutine(QuitSequence());
+    }
+
+    private IEnumerator QuitSequence()
+    {
+        ScreenAnimator.SetTrigger("FlashIn");
+        yield return new WaitForSeconds(1);
+        
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

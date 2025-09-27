@@ -137,6 +137,37 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &1025605410033610170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426523227645462252}
+  m_Layer: 3
+  m_Name: HoldSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426523227645462252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025605410033610170}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0, z: 0.602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7151086099172715273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124458838549334169
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +312,7 @@ GameObject:
   - component: {fileID: 4959382824876684543}
   - component: {fileID: 1878112323559525028}
   - component: {fileID: 8656484175305442505}
+  - component: {fileID: 8313445475824599345}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -368,7 +400,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   bPickedPolaroid: 0
-  bPausing: 0
 --- !u!114 &5126175708021633186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,6 +590,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8313445475824599345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877237056550215110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd31ba08291559548b2949d59c0cc27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickDropHandler
+  playerCamera: {fileID: 7662468302679521481}
+  objectGrabPointTransform: {fileID: 426523227645462252}
+  pickupLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  interactRange: 3
 --- !u!1 &5332255542325018651
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +640,7 @@ Transform:
   - {fileID: 6565244608530375526}
   - {fileID: 6391767461728551765}
   - {fileID: 1309596271391322025}
+  - {fileID: 426523227645462252}
   m_Father: {fileID: 6617766732082286478}
   m_LocalEulerAnglesHint: {x: 7.722, y: 0.008, z: 0.115}
 --- !u!1 &7888376437929743816

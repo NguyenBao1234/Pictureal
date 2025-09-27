@@ -1,21 +1,19 @@
 using UnityEngine;
 
-public class ObjectNeedItem : MonoBehaviour, IInteractable
+public class ObjectNeedItem : MonoBehaviour
 {
-    [SerializeField] private string requiredItemName; // tên item cần thiết để tương tác
+    [SerializeField] public string requiredItemName; // tên item cần thiết để tương tác
 
-    public void Interact(GameObject interactor)
+    public void InteractByItem(GameObject ItemFromInteract)
     {
-        Debug.Log($"Item1 got interaction from: {interactor.name}");
-        
-        if (interactor.name == requiredItemName)
+        if (ItemFromInteract.name == requiredItemName)
         {
-            Debug.Log("Correct item! Item1 reacts.");
-        }
-        else
-        {
-            Debug.Log("Wrong item. Need: " + requiredItemName);
+            InteractionByItem(ItemFromInteract);
         }
     }
+
+    protected virtual void InteractionByItem(GameObject ItemFromInteract) {}
+    
+    
 }
 

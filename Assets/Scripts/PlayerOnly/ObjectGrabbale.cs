@@ -3,7 +3,7 @@ using UnityEngine;
 public class ObjectGrabbable : MonoBehaviour 
 {
     private Rigidbody _objectRigidbody;
-    private Transform _objectGrabPointTransform;
+    private Transform TargetTransform;
     private void Awake()
     {
         _objectRigidbody = GetComponent<Rigidbody>();
@@ -11,22 +11,22 @@ public class ObjectGrabbable : MonoBehaviour
 
     public void Grab(Transform objectGrabPointTransform)
     {
-        this._objectGrabPointTransform = objectGrabPointTransform;
+        this.TargetTransform = objectGrabPointTransform;
         _objectRigidbody.useGravity = false;
 
 
     }
     public void Drop()
     {
-        this._objectGrabPointTransform = null;
+        this.TargetTransform = null;
         _objectRigidbody.useGravity = true;
     }
     private void FixedUpdate()
     {
-        if (_objectGrabPointTransform != null)
+        if (TargetTransform != null)
         {
             float followSpeed = 10f;
-            Vector3 newPosition = Vector3.Lerp(transform.position, _objectGrabPointTransform.position, Time.fixedDeltaTime * followSpeed);
+            Vector3 newPosition = Vector3.Lerp(transform.position, TargetTransform.position, Time.fixedDeltaTime * followSpeed);
             _objectRigidbody.MovePosition(newPosition);
         }
     }
@@ -37,15 +37,10 @@ public class ObjectGrabbable : MonoBehaviour
     */
     private void OnTriggerEnter(Collider other)
     {
-        // chỉ check khi đang được player cầm
-        if (_objectGrabPointTransform == null) return;
-
-        // chỉ tương tác với object có IInteractable
-        if (other.TryGetComponent<IInteractable>(out var target))
-        {
-            Debug.Log($"{gameObject.name} is trying to interact with {other.name}");
-            target.Interact(gameObject); // truyền chính item này (Knife, Key, ...)
-        }
+        if (TargetTransform == null) return;
+        var targetObject = other.gameObject.GetComponent<ObjectNeedItem>();
+        if (targetObject == null) return;
+        targetObject.InteractByItem(gameObject);
     }
 }
 

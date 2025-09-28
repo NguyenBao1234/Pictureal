@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour
 
     // input state
     private Vector2 moveInput;
+    private float moveFwdFactor;
+    private float moveRtFactor ;
     private Vector2 lookInput;
     private bool bCrouching;
     private PlayerInput playerInput;
@@ -220,8 +222,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!bCanMove || bRewinding) return;
 
-        float moveFwdFactor = joystickInput ? Math.Clamp(moveInput.y + joystickInput.Vertical, -1, 1 ) : moveInput.y;
-        float moveRtFactor = joystickInput ? Math.Clamp(moveInput.x + joystickInput.Horizontal, -1, 1 ) : moveInput.x;
+        moveFwdFactor = joystickInput ? Math.Clamp(moveInput.y + joystickInput.Vertical, -1, 1 ) : moveInput.y;
+        moveRtFactor = joystickInput ? Math.Clamp(moveInput.x + joystickInput.Horizontal, -1, 1 ) : moveInput.x;
         
         Vector3 inputDir = (transform.forward * moveFwdFactor + transform.right * moveRtFactor).normalized;
 
@@ -345,11 +347,11 @@ public class PlayerController : MonoBehaviour
         return;
     }
 
-    Vector3 horizontalVelocity = new Vector3(characterController.velocity.x, 0, characterController.velocity.z);
+    Vector2 horizontalVelocity = new Vector2(moveFwdFactor, moveRtFactor);
     float speed = horizontalVelocity.magnitude;
 
     // nếu đứng yên → reset timer về interval, không cho kêu tiếp
-    if (speed < 0.1f)
+    if (speed < 0.1f )
     {
         stepTimer = (targetSpeed == runSpeed) ? runStepInterval : walkStepInterval;
         isMoving = false;

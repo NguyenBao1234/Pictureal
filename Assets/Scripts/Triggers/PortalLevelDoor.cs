@@ -38,6 +38,7 @@ public class PortalLevelDoor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if(other.tag != "Player") return;
         if (DirectionObject == null) return;
         var playerVelocity = other.GetComponent<CharacterController>().velocity;
         playerVelocity.y = 0;

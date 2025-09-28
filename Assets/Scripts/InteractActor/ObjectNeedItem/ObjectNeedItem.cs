@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObjectNeedItem : MonoBehaviour
 {
-    [SerializeField] public string requiredItemName; // tên item cần thiết để tương tác
+    [SerializeField] private string requiredItemName; // tên item cần thiết để tương tác
 
     public void InteractByItem(GameObject ItemFromInteract)
     {

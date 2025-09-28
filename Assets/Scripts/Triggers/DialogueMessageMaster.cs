@@ -131,5 +131,6 @@ public class DialogueMessageMaster : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         if (audioSource != null && audioSource.isPlaying) audioSource.Stop();
+        if (!uiText.IsActive()) uiText.gameObject.SetActive(true);
     }
 }

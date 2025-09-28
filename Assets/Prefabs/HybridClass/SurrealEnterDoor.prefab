@@ -465,10 +465,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a429b71d54620314eb75c648f734a2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
+  requiredItemName: 
   openSound: {fileID: 8300000, guid: 89a1eaa3e84609147a93c545aa1c42ec, type: 3}
   closeSound: {fileID: 8300000, guid: abefe422376ba99478ff65ae811db47a, type: 3}
+  unlockSound: {fileID: 8300000, guid: 2de4d05bc566c024b9fedc44c66386c8, type: 3}
+  tryOpenLockedDoorSound: {fileID: 8300000, guid: ec4dd32518b43044793458d2c9ec04af, type: 3}
   openAngle: 130
   openSpeed: 2
+  bUnlock: 1
 --- !u!1 &9059277218023997586
 GameObject:
   m_ObjectHideFlags: 0

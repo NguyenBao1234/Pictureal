@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0928f533112d9a7479718feac26831ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
-  sceneToLoad: SampleScene
+  sceneToLoad: Map1_House
   mainMenuPanel: {fileID: 5420987283083994844}
   settingMenuPanel: {fileID: 0}
   ScreenAnimator: {fileID: 0}

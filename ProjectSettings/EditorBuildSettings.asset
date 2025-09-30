@@ -6,21 +6,37 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/SampleScene2.unity
-    guid: 5b2a1765c9583e54a951bfc73c93f4a2
-  - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: 7c154dd7f71da6a4da6b7e4dc64c358d
   - enabled: 1
     path: Assets/Scenes/GameMaps/Map1_House.unity
     guid: 575fb0d8f17f16d48b4db366e0496a0e
   - enabled: 1
-    path: Assets/Scenes/GameMaps/Map2.unity
-    guid: 07e11900c26abfa4fadf2f926d170364
+    path: Assets/Scenes/GameMaps/Map2_PineForest.unity
+    guid: 4bc9c39831207aa4081f39b7af5f0288
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/Map3_Desert.unity
+    guid: 3813142a6c4b13e4bbd65b62372e6ab9
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/Map4_Snow.unity
+    guid: d6db873b1a5ce5642a9728b4629ec851
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/Map5_Town.unity
+    guid: 21add1eefa978924bbee6549982ff15c
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/Map6_TrueSurreal.unity
+    guid: e88b5a4be94c9d14fac16610ac6152b4
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/SampleScene2.unity
+    guid: 5b2a1765c9583e54a951bfc73c93f4a2
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d4a4e6c1995b717469efb00ef1ee1b0c, type: 2}
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: e58a5c6cb45383b43a53bee02f3d801f, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 416cda5990d463c43b9827217a5795de, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f9e04f7056074284a8b07e9732cb021d, type: 2}
   m_UseUCBPForAssetBundles: 0

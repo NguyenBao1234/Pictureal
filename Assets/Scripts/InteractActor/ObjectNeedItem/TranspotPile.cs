@@ -14,7 +14,7 @@ public class TranspotPile : ObjectNeedItem, IInteractable
 
     [Header("Player lookup")]
     [SerializeField] private string playerTag = "Player";
-
+    [SerializeField] private GameObject KeyPresentation;
     private GameObject PlayerObject;
     private bool bUnlocked = false;
     private ColorAdjustments PPColorAdjustments;
@@ -81,7 +81,8 @@ public class TranspotPile : ObjectNeedItem, IInteractable
     protected override void InteractionByItem(GameObject itemFromInteract)
     {
         base.InteractionByItem(itemFromInteract);
-        GameObject.Destroy(itemFromInteract);
+        Destroy(itemFromInteract);
+        KeyPresentation.SetActive(true);
         Debug.Log(itemFromInteract +" Unlock Pile");
         bUnlocked = true;
     }

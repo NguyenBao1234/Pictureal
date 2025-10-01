@@ -404,6 +404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.755098
@@ -590,6 +594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -62.71408
@@ -713,6 +721,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -906,6 +918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.7312
@@ -1025,6 +1041,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7366289392869341708, guid: 84c7d06bab11d5d4cb50a7de9558474b, type: 3}
   m_PrefabInstance: {fileID: 31405508}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &31676980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7541285564287991059, guid: a66298eb784f1f34999e5fc9aa12d202, type: 3}
+  m_PrefabInstance: {fileID: 1116392658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &39614831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1076,6 +1097,10 @@ PrefabInstance:
     - target: {fileID: 2247300899556517473, guid: 30912fc217de250468c366d2c8bc9441, type: 3}
       propertyPath: m_Name
       value: Road Fence 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247300899556517473, guid: 30912fc217de250468c366d2c8bc9441, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3171,6 +3196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.28801
@@ -3301,6 +3330,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3577,6 +3610,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4144,6 +4181,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 88b1cb3d28c88164ba1ea8de627dd2c9, type: 3}
   m_PrefabInstance: {fileID: 225369485}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &226791989
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9836292
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3139346
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -36.00954
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_Name
+      value: TrafficCone (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
 --- !u!1001 &227029064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4798,6 +4892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -52.289043
@@ -4921,6 +5019,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5582,6 +5684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ffde7faeb87d3b46892f73cc8a0b950, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5967,6 +6073,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6456,6 +6566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2247300899556517473, guid: 30912fc217de250468c366d2c8bc9441, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6772,6 +6886,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1257800630543574242, guid: df0e4a41b0de5e9478d6033617126614, type: 3}
   m_PrefabInstance: {fileID: 335419220}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &337356601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147904500537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7f721a8aa55834ea62eec7687c3d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarAIWaypoint
+  waypoints:
+  - {fileID: 543450651637385603}
+  - {fileID: 543450651642363357}
+  - {fileID: 543450652978727987}
+  waypointThreshold: 1
+  loop: 1
+  speed: 5
+  lockToGround: 1
+  visualYawOffset: 0
+  rotationLerpSpeed: 5
+--- !u!54 &337356602
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147904500537}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &337437698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6783,6 +6946,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7847,6 +8014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.755098
@@ -8508,6 +8679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.140278
@@ -8908,6 +9083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.75606
@@ -9093,6 +9272,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9666,6 +9849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8148961
@@ -9727,6 +9914,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10203,6 +10394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.443539
@@ -10392,6 +10587,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10585,6 +10784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.755098
@@ -10770,6 +10973,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11143,6 +11350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -62.861805
@@ -11204,6 +11415,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11390,6 +11605,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11964,6 +12183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.412691
@@ -12212,6 +12435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.90379
@@ -12273,6 +12500,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12431,6 +12662,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12624,6 +12859,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13342,6 +13581,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14754,6 +14997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.882687
@@ -14958,6 +15205,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16013,6 +16264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.85895
@@ -16835,6 +17090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.90379
@@ -16931,6 +17190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.962804
@@ -16992,6 +17255,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17150,6 +17417,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17494,6 +17765,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18417,6 +18692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.547394
@@ -18711,6 +18990,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19645,6 +19928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.651245
@@ -20303,6 +20590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.033615
@@ -20681,6 +20972,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21068,6 +21363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.9695148
@@ -21130,6 +21429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.140278
@@ -21191,6 +21494,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21930,27 +22237,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Taxi (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7541285564287991059, guid: a66298eb784f1f34999e5fc9aa12d202, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7541285564287991059, guid: a66298eb784f1f34999e5fc9aa12d202, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1116392660}
+      addedObject: {fileID: 1116392664}
   m_SourcePrefab: {fileID: 100100000, guid: a66298eb784f1f34999e5fc9aa12d202, type: 3}
 --- !u!4 &1116392659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7197834052904871849, guid: a66298eb784f1f34999e5fc9aa12d202, type: 3}
   m_PrefabInstance: {fileID: 1116392658}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1116392660
+--- !u!95 &1116392664
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 31676980}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 809cf9c367ca92c48a71d5725aa2febb, type: 2}
@@ -22201,6 +22512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.443539
@@ -22324,6 +22639,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22489,6 +22808,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22671,6 +22994,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23291,6 +23618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41.02666
@@ -23352,6 +23683,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24244,6 +24579,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25180,6 +25519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -62.71408
@@ -25837,6 +26180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2239804
@@ -26029,6 +26376,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26680,6 +27031,63 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1001 &1364245749
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.2547245
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.313934
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -37.183277
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_Name
+      value: TrafficCone (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
 --- !u!1 &1368105039 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3685171989860980535, guid: 84c7d06bab11d5d4cb50a7de9558474b, type: 3}
@@ -26804,6 +27212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.85895
@@ -26916,6 +27328,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7485003033883253255, guid: f7b532026590c3341bc16a8ae9fc24ce, type: 3}
   m_PrefabInstance: {fileID: 1383572502}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1383977275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.33
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -37.90734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      propertyPath: m_Name
+      value: car
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1464352314}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1464352313}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1464352312}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1464352316}
+  m_SourcePrefab: {fileID: 100100000, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
 --- !u!1001 &1394323142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27120,6 +27617,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28091,6 +28592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.651245
@@ -28396,6 +28901,176 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7366289392869341708, guid: 84c7d06bab11d5d4cb50a7de9558474b, type: 3}
   m_PrefabInstance: {fileID: 1462697034}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1464352311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e84ce45959b2c046b997da49696143a, type: 3}
+  m_PrefabInstance: {fileID: 1383977275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1464352312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464352311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67d8a4c4932c124f9d35a4b3e2b94a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarAIController
+  safeDistance: 10
+  carSpeed: 5
+  slowDownSpeed: 2
+  stopBuffer: 4
+  hornSound: {fileID: 0}
+  brakeForce: 5
+  moveAxis: 0
+  moveDirection: 0
+--- !u!82 &1464352313
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464352311}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!54 &1464352314
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464352311}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1464352316
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464352311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.9, y: 1.71, z: 1.8}
+  m_Center: {x: -0.34, y: 0, z: 0}
 --- !u!1001 &1469388281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28619,6 +29294,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28882,6 +29561,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29571,6 +30254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -55.18531
@@ -29880,6 +30567,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30477,6 +31168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.75606
@@ -30795,6 +31490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8148961
@@ -30856,6 +31555,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31139,6 +31842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.85895
@@ -31262,6 +31969,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31482,6 +32193,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31866,6 +32581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9626241
@@ -31928,6 +32647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.608334
@@ -31989,6 +32712,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32271,6 +32998,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32626,6 +33357,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33629,6 +34364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.58347
@@ -33794,6 +34533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5194402
@@ -33889,6 +34632,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34109,6 +34856,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34604,6 +35355,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35698,6 +36453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -58.081577
@@ -35952,6 +36711,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36270,6 +37033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.651245
@@ -36531,6 +37298,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36900,6 +37671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41.02666
@@ -37235,15 +38010,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1197804513990878268, guid: abd1fda3d06e8d04f89816d9b58dc9e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.499999
+      value: -11.32
       objectReference: {fileID: 0}
     - target: {fileID: 1197804513990878268, guid: abd1fda3d06e8d04f89816d9b58dc9e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.37290812
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1197804513990878268, guid: abd1fda3d06e8d04f89816d9b58dc9e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.202682
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 1197804513990878268, guid: abd1fda3d06e8d04f89816d9b58dc9e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -37608,6 +38383,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38503,6 +39282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.412691
@@ -38564,6 +39347,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38688,6 +39475,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39451,6 +40242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ffde7faeb87d3b46892f73cc8a0b950, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40087,6 +40882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -62.861805
@@ -40149,6 +40948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.00953
@@ -40210,6 +41013,10 @@ PrefabInstance:
     - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_Name
       value: Road Fence 2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40758,6 +41565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Fence 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5781469342264324738, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6588826799449942072, guid: a09e4b73688523d49bf8128d9f12766b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.264967
@@ -41152,6 +41963,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1629507032815443717, guid: 9db28b8e527f9824494b5d4aca73f1c2, type: 3}
   m_PrefabInstance: {fileID: 2124844308}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2134338098
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.34
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3139343
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -38.644466
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
+      propertyPath: m_Name
+      value: TrafficCone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a02bfb611f06c4e44b2c1e8e07b662ba, type: 3}
 --- !u!1001 &2135550395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41618,6 +42486,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &543450651637385603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147904500537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 68.75, y: 2.8, z: -38.34}
+  m_LocalScale: {x: 0.69, y: 0.69, z: 0.69}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &543450651642363357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147991226215}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 69, y: 2.8, z: -54.09}
+  m_LocalScale: {x: 0.69, y: 0.69, z: 0.69}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &543450652978727987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148708939401}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 72.32, y: 2.8, z: -62.03}
+  m_LocalScale: {x: 0.69, y: 0.69, z: 0.69}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &718215364163364563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41688,6 +42601,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5080717371217833245, guid: 9cfe989745c4eb4428bbb0966dc87749, type: 3}
   m_PrefabInstance: {fileID: 718215364163364563}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &919132147904500537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543450651637385603}
+  - component: {fileID: 337356602}
+  - component: {fileID: 337356601}
+  m_Layer: 0
+  m_Name: WayPointManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &919132147991226215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543450651642363357}
+  m_Layer: 0
+  m_Name: WayPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &919132148708939401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543450652978727987}
+  m_Layer: 0
+  m_Name: WayPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!114 &956980426125272664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42244,7 +43207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6617766732082286478, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 78.08609
+      value: 28.77
       objectReference: {fileID: 0}
     - target: {fileID: 6617766732082286478, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_LocalPosition.y
@@ -42252,7 +43215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6617766732082286478, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.36354
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 6617766732082286478, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42872,3 +43835,10 @@ SceneRoots:
   - {fileID: 5649276375718883557}
   - {fileID: 496384278066872353}
   - {fileID: 1787299104}
+  - {fileID: 1383977275}
+  - {fileID: 543450651637385603}
+  - {fileID: 543450651642363357}
+  - {fileID: 543450652978727987}
+  - {fileID: 2134338098}
+  - {fileID: 226791989}
+  - {fileID: 1364245749}

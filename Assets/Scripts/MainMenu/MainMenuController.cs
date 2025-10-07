@@ -8,10 +8,11 @@ public class MainMenuController : MonoBehaviour
 {
     public string sceneToLoad = "SampleScene";
     public GameObject mainMenuPanel;
-    public SettingsMenuController settingMenuPanel;
+    [SerializeField] private BackableUI settingMenuPanel;
+    [SerializeField] private BackableUI InfoPanel;
+    
     public Animator ScreenAnimator;
     
-    private float deltaTime;
     private float startTime;
     
     public TMP_Text fpsText;
@@ -33,7 +34,7 @@ public class MainMenuController : MonoBehaviour
         if (fpsText != null)
         {
             int fpsInt = Mathf.RoundToInt(1f / Time.deltaTime);
-            fpsText.text = targetFPS + " FPS";
+            fpsText.text = fpsInt + " FPS";
         }
 
         
@@ -71,6 +72,13 @@ public class MainMenuController : MonoBehaviour
         gameObject.SetActive(false);
         settingMenuPanel.PrevUI = gameObject;
         settingMenuPanel.gameObject.SetActive(true);
+    }
+
+    public void OnShowInfo()
+    {
+        gameObject.SetActive(false);
+        InfoPanel.PrevUI = gameObject;
+        InfoPanel.gameObject.SetActive(true);
     }
     
     public void OnQuit()

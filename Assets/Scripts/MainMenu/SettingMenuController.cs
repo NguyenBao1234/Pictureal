@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class SettingsMenuController : MonoBehaviour
+public class SettingsMenuController : BackableUI
 {
     [Header("FPS Settings")]
     public TextMeshProUGUI fpsValueLabel;    // Ở giữa (giá trị cap chọn)
@@ -30,8 +30,7 @@ public class SettingsMenuController : MonoBehaviour
     public TextMeshProUGUI resolutionValueLabel;
     private string[] resolutionOptions = { "1280x720", "1920x1080", "2560x1440" };
     private int currentResolutionIndex = 1; // mặc định 1080p
-
-    public GameObject PrevUI;
+    
 
     void Start()
     {
@@ -148,10 +147,5 @@ public class SettingsMenuController : MonoBehaviour
         overallValueLabel.text = overallOptions[currentOverallIndex];
         resolutionValueLabel.text = resolutionOptions[currentResolutionIndex];
     }
-
-    public void OnBack()
-    {
-        PrevUI.SetActive(true);
-        gameObject.SetActive(false);
-    }
+    
 }

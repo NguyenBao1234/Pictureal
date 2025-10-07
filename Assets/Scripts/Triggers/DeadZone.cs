@@ -15,7 +15,6 @@ public class DeadZone : MonoBehaviour
             Invoke(nameof(RestartLevel), restartDelay);
         }
     }
-
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

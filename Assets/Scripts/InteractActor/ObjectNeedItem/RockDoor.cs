@@ -15,10 +15,11 @@ public class RockDoor : ObjectNeedItem
         base.InteractionByItem(ItemFromInteract);
         KeyObjectRepresentation.SetActive(true);
         Destroy(ItemFromInteract);
-       StartCoroutine(MoveDoorCoroutine());
+        StartCoroutine(MoveDoorCoroutine());
     }
     private IEnumerator MoveDoorCoroutine()
     {
+        InteractionText.gameObject.SetActive(true);
         InteractionText.text = Message;
         while (Vector3.Distance(RockDoorTransform.position, TargetTransform.position) > 0.01f)
         {

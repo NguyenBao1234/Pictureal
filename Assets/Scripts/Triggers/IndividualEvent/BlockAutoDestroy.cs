@@ -11,7 +11,7 @@ public class BlockAutoDestroy : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Player")) return;
         TextHUD.text = Message;
-        Invoke(nameof(DestroySelf), 40f);
+        Invoke(nameof(DestroySelf), WaitTime);
     }
     void DestroySelf()
     {

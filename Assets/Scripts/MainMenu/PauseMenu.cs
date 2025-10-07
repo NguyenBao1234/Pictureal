@@ -21,6 +21,8 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenuClicked()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("MainMenuScene");
     }
 

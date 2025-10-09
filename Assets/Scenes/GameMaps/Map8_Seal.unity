@@ -1159,6 +1159,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5373852386045904775, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5973630139529373915, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: PauseUI
       value: 
@@ -1229,11 +1233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6617766732082286478, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.75
+      value: -4.21
       objectReference: {fileID: 0}
     - target: {fileID: 6617766732082286478, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.319
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 6617766732082286478, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_LocalPosition.z

@@ -2395,6 +2395,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4656983614959010389, guid: 303d3ba452d24564c9ef1c70c2ab3772, type: 3}
   m_PrefabInstance: {fileID: 562180449}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &576226255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5251402089778869840, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
+  m_PrefabInstance: {fileID: 1517607351958365431}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &587997077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2998,8 +3009,8 @@ Transform:
   m_GameObject: {fileID: 654510427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: -2.6890001, y: 2.72, z: 10.676454}
-  m_LocalScale: {x: 1.5650002, y: 1.38, z: 0.3}
+  m_LocalPosition: {x: -2.682777, y: 2.72, z: 10.676454}
+  m_LocalScale: {x: 1.5650002, y: 1.38, z: 0.29}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 81589248}
@@ -3723,11 +3734,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueMessageMaster
   uiText: {fileID: 2077638791}
   entries:
+  - message: "Ng\u1EAFm gi\u1EEFa m\xE0n h\xECnh th\u1EB3ng v\xE0o v\u1EADt th\u1EC3"
+    durationAfter: 1.5
   - message: "B\u1EA5m E/Ch\u1EA1m m\xE0n h\xECnh c\u1EA3m \u1EE9ng \u0111\u1EC3
       t\u01B0\u01A1ng t\xE1c"
-    durationAfter: 3
+    durationAfter: 1.5
   bAppendWord: 1
-  typingSpeed: 0.05
+  typingSpeed: 0.03
   bTriggeredOnce: 1
   charSound: {fileID: 8300000, guid: acc600b8cf044ba438b7183bc7474f41, type: 3}
   charVolume: 0.6
@@ -4347,7 +4360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66031bfbe51fb1746849142f4fa55fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueMessageMaster
-  uiText: {fileID: 2077638791}
+  uiText: {fileID: 576226255}
   entries:
   - message: "\u0110\u1EB7t v\xE0o \u1ED5 kho\xE1 \u0111\u1EC3 m\u1EDF "
     durationAfter: 2
@@ -5586,7 +5599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 553658901281801959, guid: f0a9afa8e9bf38747a52fd4710e65412, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4987345
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 553658901281801959, guid: f0a9afa8e9bf38747a52fd4710e65412, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8894,6 +8907,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 567016533610892933, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575534635605699379, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1665251383063131145, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8974,6 +8995,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7246919610259965226, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8775803109673308059, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
       propertyPath: m_Name
       value: HUDCanvas
@@ -9049,6 +9074,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5373852386045904775, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373852386045904775, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5973630139529373915, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}

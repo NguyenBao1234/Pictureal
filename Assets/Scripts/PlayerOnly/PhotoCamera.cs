@@ -10,6 +10,8 @@ public class PhotoCamera : MonoBehaviour
     private Camera PolaroidRenderCam;
     public GameObject photoPrefab;
     public GameObject PolaroidCameraModel;
+    [SerializeField] private AudioClip TakeShotSFX;
+    private AudioSource TakeShotAudioSource;
     
     private Texture2D capturedTex;
     private PlayerInput playerInput;
@@ -22,6 +24,9 @@ public class PhotoCamera : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(!TakeShotAudioSource) TakeShotAudioSource = gameObject.AddComponent<AudioSource>();
+        TakeShotAudioSource.spatialBlend = 0;
+        TakeShotAudioSource.playOnAwake = false;
         PolaroidRenderCam = frustumCutHandler.CameraBinocular;
         PolaroidRenderCam.gameObject.SetActive(false);
         photoPrefab.SetActive(false);//refactoring later
@@ -60,7 +65,7 @@ public class PhotoCamera : MonoBehaviour
     }
     void CapturePhoto()
     {
-        //it will Play button click SFX here
+        if(TakeShotSFX) TakeShotAudioSource.PlayOneShot(TakeShotSFX);
         if (remainingFilm == 0) return;
         remainingFilm--;
         bTakenPhoto = true;

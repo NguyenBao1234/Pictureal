@@ -75,8 +75,8 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         targetSpeed = walkSpeed;
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rwObj = GetComponent<RewindableObject>();
         CameraPolaroid = GetComponent<PhotoCamera>();
         if (rewindUI != null) rewindUI.SetActive(false);

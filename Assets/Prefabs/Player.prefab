@@ -623,6 +623,7 @@ MonoBehaviour:
   frustumCutHandler: {fileID: 4959382824876684543}
   photoPrefab: {fileID: 7888376437929743816}
   PolaroidCameraModel: {fileID: 8348886338378467389}
+  TakeShotSFX: {fileID: 8300000, guid: a0e0a63f38a27324c9c24e73ca05a89e, type: 3}
 --- !u!114 &4959382824876684543
 MonoBehaviour:
   m_ObjectHideFlags: 0

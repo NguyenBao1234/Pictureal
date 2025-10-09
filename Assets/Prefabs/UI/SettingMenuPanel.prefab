@@ -998,15 +998,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a76124726a34b408177509e7cef885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenuController
+  PrevUI: {fileID: 0}
   fpsValueLabel: {fileID: 5623527459011739305}
   shadowValueLabel: {fileID: 3889622864836161141}
   overallValueLabel: {fileID: 3879000812041915394}
-  lowURP: {fileID: 11400000, guid: 4b83569d67af61e458304325a23e5dfd, type: 2}
-  mediumURP: {fileID: 0}
-  highURP: {fileID: 0}
-  ultraURP: {fileID: 0}
   resolutionValueLabel: {fileID: 1975258826142008088}
-  PrevUI: {fileID: 0}
 --- !u!223 &3793906420927476173
 Canvas:
   m_ObjectHideFlags: 0

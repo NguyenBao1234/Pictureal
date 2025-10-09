@@ -3153,8 +3153,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5506379540429288996}
   - {fileID: 7149898477875222044}
+  - {fileID: 5506379540429288996}
   - {fileID: 6753508886110174462}
   - {fileID: 3584269127777312664}
   - {fileID: 6609123231779354491}
@@ -3654,7 +3654,7 @@ PrefabInstance:
       objectReference: {fileID: 3814045506170712136}
     - target: {fileID: 2153556676432863586, guid: c9a52aedabe3a444abbbe596f2f2de1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: IncreaseShadow
+      value: IncreaseResolution
       objectReference: {fileID: 0}
     - target: {fileID: 2596576499084435735, guid: c9a52aedabe3a444abbbe596f2f2de1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

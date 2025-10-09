@@ -50,10 +50,10 @@ public class MainMenuController : MonoBehaviour
     
     public void OnNewGame()
     {
-        StartCoroutine(NewGameSequence());
+        StartCoroutine(NewGameSequence(sceneToLoad));
     }
 
-    IEnumerator NewGameSequence()
+    IEnumerator NewGameSequence(string SceneToLoad)
     {
         mainMenuPanel.GetComponent<Canvas>().enabled = false;
         if(ScreenAnimator) ScreenAnimator.SetTrigger("TakeShot");
@@ -62,10 +62,13 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("FlashIn Execute");
         yield return new WaitForSeconds(1);
         // Load scene
-        SceneManager.LoadScene(sceneToLoad);
-
+        SceneManager.LoadScene(SceneToLoad);
     }
 
+    public void OnPrototypeCLick()
+    {
+        StartCoroutine(NewGameSequence("SampleScene"));
+    }
     // Các hàm khác
     public void OnSetting()
     {

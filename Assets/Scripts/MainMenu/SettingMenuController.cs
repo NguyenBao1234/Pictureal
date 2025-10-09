@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using ShadowResolution = UnityEngine.ShadowResolution;
 
 public class SettingsMenuController : BackableUI
 {
@@ -20,21 +21,19 @@ public class SettingsMenuController : BackableUI
     private string[] overallOptions = { "Low", "Medium", "High", "Ultra" };
     private int currentOverallIndex = 1; // Medium
 
-    // Thêm URP Assets vào đây (kéo thả trong Inspector)
-    public UniversalRenderPipelineAsset lowURP;
-    public UniversalRenderPipelineAsset mediumURP;
-    public UniversalRenderPipelineAsset highURP;
-    public UniversalRenderPipelineAsset ultraURP;
-
     [Header("Resolution Settings")]
     public TextMeshProUGUI resolutionValueLabel;
     private string[] resolutionOptions = { "1280x720", "1920x1080", "2560x1440" };
     private int currentResolutionIndex = 1; // mặc định 1080p
     
 
-    void Start()
+    void OnEnable()
     {
         Application.targetFrameRate = fpsOptions[currentFpsIndex];
+        currentOverallIndex = QualitySettings.GetQualityLevel();
+        currentShadowIndex = (int)QualitySettings.shadowResolution;
+        Debug.Log("Shadow Resolution Index: " + currentShadowIndex);
+        GetDeviceResolution();//Setup 
         ApplyQuality(); // áp dụng quality mặc định
         ApplyResolution(); // áp dụng res mặc định
         UpdateLabels();
@@ -44,7 +43,7 @@ public class SettingsMenuController : BackableUI
     {
 
     }
-
+    
     // ================= FPS =================
     public void DecreaseFPS()
     {
@@ -74,16 +73,18 @@ public class SettingsMenuController : BackableUI
     }
 
     void ApplyShadow()
-{
-    shadowValueLabel.text = shadowOptions[currentShadowIndex];
-
-    switch (currentShadowIndex)
     {
-        case 0: QualitySettings.shadows = UnityEngine.ShadowQuality.Disable; break;
-        case 1: QualitySettings.shadows = UnityEngine.ShadowQuality.HardOnly; break;
-        case 2: QualitySettings.shadows = UnityEngine.ShadowQuality.All; break;
+        shadowValueLabel.text = shadowOptions[currentShadowIndex];
+        switch (shadowOptions[currentShadowIndex])
+        {
+            case "Low": QualitySettings.shadowResolution = ShadowResolution.Low;
+                break;
+            case "Medium": QualitySettings.shadowResolution = ShadowResolution.Medium;
+                break;
+            case "High": QualitySettings.shadowResolution = ShadowResolution.High;
+                break;
+        }
     }
-}
 
     // ================= Overall Quality =================
     public void DecreaseQuality()
@@ -101,21 +102,7 @@ public class SettingsMenuController : BackableUI
     void ApplyQuality()
     {
         overallValueLabel.text = overallOptions[currentOverallIndex];
-
-        UniversalRenderPipelineAsset selected = null;
-        switch (currentOverallIndex)
-        {
-            case 0: selected = lowURP; break;
-            case 1: selected = mediumURP; break;
-            case 2: selected = highURP; break;
-            case 3: selected = ultraURP; break;
-        }
-
-        if (selected != null)
-        {
-            GraphicsSettings.defaultRenderPipeline = selected;
-            QualitySettings.renderPipeline = selected;
-        }
+        QualitySettings.SetQualityLevel(currentOverallIndex, true);
     }
 
     // ================= Resolution =================
@@ -140,6 +127,33 @@ public class SettingsMenuController : BackableUI
         resolutionValueLabel.text = resolutionOptions[currentResolutionIndex];
     }
 
+    private void GetDeviceResolution()
+    {
+        int currentWidth = Screen.width;
+        int currentHeight = Screen.height;
+        string currentRes = currentWidth + "x" + currentHeight;
+        
+        bool exists = false;
+        for (int i = 0; i < resolutionOptions.Length; i++)
+        {
+            if (resolutionOptions[i] == currentRes)
+            {
+                exists = true;
+                currentResolutionIndex = i;
+                break;
+            }
+        }
+
+        if (!exists)
+        {
+            string[] newOptions = new string[resolutionOptions.Length + 1];
+            newOptions[0] = currentRes;
+            
+            for (int i = 0; i < resolutionOptions.Length; i++) newOptions[i + 1] = resolutionOptions[i];
+            resolutionOptions = newOptions;
+            currentResolutionIndex = 0;
+        }
+    }
     private void UpdateLabels()
     {
         fpsValueLabel.text = fpsOptions[currentFpsIndex].ToString();

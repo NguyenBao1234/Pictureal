@@ -103,6 +103,7 @@ public class SettingsMenuController : BackableUI
     {
         overallValueLabel.text = overallOptions[currentOverallIndex];
         QualitySettings.SetQualityLevel(currentOverallIndex, true);
+        Debug.Log(QualitySettings.names[QualitySettings.GetQualityLevel()]);
     }
 
     // ================= Resolution =================

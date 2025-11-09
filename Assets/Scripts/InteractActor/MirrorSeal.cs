@@ -8,6 +8,7 @@ public class MirrorSeal : MonoBehaviour, IInteractable
     [SerializeField] private TextMeshProUGUI textUI;
     [SerializeField] private Animator ScreenAnimator;
     [SerializeField] private AudioClip SmileSound;
+    [SerializeField] private string Message = "You have sealed the camera \nand yourself";
     bool bTriggered = false;
     public void Interact(GameObject interactor)
     {
@@ -22,7 +23,7 @@ public class MirrorSeal : MonoBehaviour, IInteractable
     {
         yield return new WaitForSeconds(0.5f);
         textUI.gameObject.SetActive(true);
-        textUI.text = "Bạn đã phong ấn chiếc máy ảnh \nvà bản thân mình";
+        textUI.text = Message;
         if(SmileSound) AudioSource.PlayClipAtPoint(SmileSound, transform.position);
         yield return new WaitForSeconds(8f);
         Cursor.visible = true;

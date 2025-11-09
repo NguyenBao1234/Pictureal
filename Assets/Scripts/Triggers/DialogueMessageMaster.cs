@@ -76,11 +76,9 @@ public class DialogueMessageMaster : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!bTriggeredOnce)
-        {
-            uiText.text = "";
-            uiText.gameObject.SetActive(false);
-        }
+        if (bTriggeredOnce) return;
+        uiText.text = "";
+        uiText.gameObject.SetActive(false);
     }
 
     private IEnumerator PlayEntriesCoroutine()

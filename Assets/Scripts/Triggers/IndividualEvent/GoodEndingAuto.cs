@@ -7,10 +7,11 @@ public class GoodEndingAuto : MonoBehaviour
 {
     [SerializeField]private TextMeshProUGUI textUI;
     [SerializeField]private Animator Screen;
+    [SerializeField]private string Message = "Welcome back";
     void Start()
     {
         textUI.gameObject.SetActive(true);
-        textUI.text = "Chúc mừng bạn quay trở về";
+        textUI.text = Message;
         StartCoroutine(DelaybackToMainMenu());
     }
 

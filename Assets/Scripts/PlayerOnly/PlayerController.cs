@@ -217,6 +217,12 @@ public class PlayerController : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
+
+    public void SetPickupPolaroid(bool bPickup)
+    {
+        CameraPolaroid.PolaroidCameraModel.SetActive(bPickup); 
+        bPickedPolaroid = bPickup;
+    }
     // --- Logic di chuyển ---
     private void HandleMovement()
     {

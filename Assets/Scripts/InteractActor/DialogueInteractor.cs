@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -14,7 +15,7 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
     private bool bCalledback = false;
     [Header("Trigger")]
     [SerializeField] private bool bTriggeredOnce = true;
-    [SerializeField] private bool bTriggered = false;
+    private bool bTriggered = false;
     
     [Header("Dialogue Behavior")]
     [SerializeField] private bool bAppendWord = true; 
@@ -56,6 +57,7 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
 
     public void Interact(GameObject interactor)
     {
+        Debug.Log(gameObject.name + " was interacted by " + interactor.name);
         if (bTriggeredOnce && bTriggered) return;
         if(!bTyping) currentRoutine = StartCoroutine(PlayDialogueCoroutine(currentDialogueIndex));
     }
@@ -67,6 +69,7 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
         var dialogue = Dialogues[inIndex];
 
         bTyping = true;
+        uiText.gameObject.SetActive(true);
         if (bAppendWord) yield return StartCoroutine(TypeText(dialogue.message));
         else uiText.text = dialogue.message;
         bTyping = false;

@@ -59,7 +59,7 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
     {
         Debug.Log(gameObject.name + " was interacted by " + interactor.name);
         if (bTriggeredOnce && bTriggered) return;
-        if(!bTyping) currentRoutine = StartCoroutine(PlayDialogueCoroutine(currentDialogueIndex));
+        if(!bTyping && currentRoutine == null) currentRoutine = StartCoroutine(PlayDialogueCoroutine(currentDialogueIndex));
     }
     bool bTyping = false;
     private IEnumerator PlayDialogueCoroutine(int inIndex)
@@ -72,7 +72,7 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
         uiText.gameObject.SetActive(true);
         if (bAppendWord) yield return StartCoroutine(TypeText(dialogue.message));
         else uiText.text = dialogue.message;
-        bTyping = false;
+
         yield return new WaitForSeconds(dialogue.durationAfter);
         bool bLastDialogue = (currentDialogueIndex == Dialogues.Count - 1);
         if (bTriggeredOnce && bLastDialogue)
@@ -118,5 +118,6 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
         }
         if (audioSource && audioSource.isPlaying) audioSource.Stop();
         if (!uiText.IsActive()) uiText.gameObject.SetActive(true);
+        bTyping = false;
     }
 }

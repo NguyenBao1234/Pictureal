@@ -75,7 +75,7 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
 
         yield return new WaitForSeconds(dialogue.durationAfter);
         bool bLastDialogue = (currentDialogueIndex == Dialogues.Count - 1);
-        if (bTriggeredOnce && bLastDialogue)
+        if (bLastDialogue)
         {
             uiText.text = "";
             uiText.gameObject.SetActive(false);

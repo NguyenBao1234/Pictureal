@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController characterController;
     private Vector3 velocity;
-    private bool bCanMove = true;
+    [SerializeField]private bool bCanMove = true;
     public bool GetCanMove() => bCanMove;
     public void SetCanMove(bool bInCanMove) => bCanMove = bInCanMove;
     private float targetSpeed;

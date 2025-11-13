@@ -20,6 +20,7 @@ public class AutoMoveTo : MonoBehaviour
         {
             bMoving = false;
             OnMoveComplete?.Invoke();
+            animator.SetBool("Moving", false);
         }
     }
 

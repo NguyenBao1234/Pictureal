@@ -57,7 +57,7 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
 
     public void Interact(GameObject interactor)
     {
-        Debug.Log(gameObject.name + " was interacted by " + interactor.name);
+        if(interactor) Debug.Log(gameObject.name + " was interacted by " + interactor.name);
         if (bTriggeredOnce && bTriggered) return;
         if(!bTyping && currentRoutine == null) currentRoutine = StartCoroutine(PlayDialogueCoroutine(currentDialogueIndex));
     }

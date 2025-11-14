@@ -547,7 +547,7 @@ PrefabInstance:
       objectReference: {fileID: 717525610}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: charVolume
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.size
@@ -555,12 +555,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].message
-      value: "Surreal: \u0110\xE2y l\xE0 m\u1ED9 c\u1EE7a b\u1EA1n t\xF4i"
+      value: 'Surreal: This is my friend''s grave'
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[1].message
-      value: "Surreal: Jesus, \u0111\xE3 l\xE0 h\u01A1n 2000 n\u0103m tr\u01B0\u1EDBc
-        r\u1ED3i"
+      value: 'Surreal: Jesus, that was over 2000 years ago'
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].durationAfter
@@ -1474,21 +1473,19 @@ PrefabInstance:
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: uiText
       value: 
-      objectReference: {fileID: 717525610}
+      objectReference: {fileID: 2708020578221448508}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: charSound
       value: 
-      objectReference: {fileID: 8300000, guid: c0d152b671d8a6f4f82279813481a52e, type: 3}
+      objectReference: {fileID: 8300000, guid: 1972fbb8ad3340b4387e3258f9f4da21, type: 3}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: charVolume
-      value: 0.8
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].message
-      value: "SnowMan: N\xE0y xin ch\xE0o. R\u1EA5t vui \u0111\u01B0\u1EE3c g\u1EB7p
-        b\u1EA1n. B\u1EA1n gi\xFAp t\xF4i t\xECm c\xE1i m\u0169i \u0111\u01B0\u1EE3c
-        kh\xF4ng, n\xF3 m\xE0u cam, t\xF4i l\u1EE1 l\xE0m r\u01A1i n\xF3 ra v\xEC
-        g\xE3i m\u0169i."
+      value: "SnowMan: Hello there! Nice to meet you. Could you help me find my nose?
+        It\u2019s orange, I accidentally knocked it off while scratching my nose."
       objectReference: {fileID: 0}
     - target: {fileID: 8864056382464516611, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_Name
@@ -4020,7 +4017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].message
-      value: "B\u1EA5m E - T\u01B0\u01A1ng t\xE1c"
+      value: Press E - Interact
       objectReference: {fileID: 0}
     - target: {fileID: 8864056382464516611, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_Name
@@ -4390,7 +4387,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4420259653741091156, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.64
+      value: 54.611
       objectReference: {fileID: 0}
     - target: {fileID: 4420259653741091156, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4398,7 +4395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420259653741091156, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.8
+      value: -21.776
       objectReference: {fileID: 0}
     - target: {fileID: 4420259653741091156, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4434,7 +4431,7 @@ PrefabInstance:
       objectReference: {fileID: 717525610}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: charVolume
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: typingSpeed
@@ -4446,35 +4443,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].message
-      value: "Surreal:  40 gi\xE2y v\u1EEBa r\u1ED3i v\u1EEBa l\xE0 nghi th\u1EE9c
-        k\u1EBFt b\u1EA1n c\u1EE7a t\xF4i, n\xF3 c\u0169ng l\xE0 th\u1EED th\xE1ch
-        nh\u1ECF c\u1EE7a t\xF4i, v\xEC th\u1EBF t\xF4i s\u1EBD gi\xFAp Broca c\xF9ng
-        t\xECm \u0111\u01B0\u1EDDng nh\xE9"
+      value: "Surreal:  The 40 seconds I mentioned earlier were both my friendship
+        ritual and a little challenge of mine. So now, I\u2019ll help you find your
+        way, Broca."
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[1].message
-      value: "- N\xF3i chuy\u1EC7n v\u1EDBi Broca c\u0169ng th\u1EADt l\xE0m t\xF4i
-        vui. D\xF9 b\u1EA1n v\u1EABn ch\u01B0a n\xF3i \u0111\u01B0\u1EE3c"
+      value: "Talking with you, Broca, really makes me happy \u2014 even though you
+        still can\u2019t speak yet."
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[2].message
-      value: "Th\u1EADt ra Broca c\xF3 th\u1EC3 n\xF3i \u0111\u01B0\u1EE3c \u0111\xF3,
-        h\xE3y c\u1ED1 n\u1EAFm b\u1EAFt c\xE1ch t\xF4i giao ti\u1EBFp v\u1EDBi b\u1EA1n.
-        Nh\u1EEFng \u0111\u1EE9a tr\u1EBB s\u01A1 sinh c\u0169ng v\u1EADy, l\xFAc
-        \u0111\u1EA7u im thin th\xEDt, sau l\u1EA1i bi\u1EBFt n\xF3i, \u0111\xF3
-        \u0111\xFAng l\xE0 th\u1EE9 \u0111i\u1EC1u k\u1EF3 di\u1EC7u"
+      value: Actually Broca can speak, try to grasp the way I communicate with you.
+        Newborn babies too, at first they are silent, then they speak, it's a miracle.
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].durationAfter
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[1].durationAfter
-      value: 1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[2].durationAfter
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8864056382464516611, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_Name
@@ -4544,7 +4537,7 @@ PrefabInstance:
       objectReference: {fileID: 717525610}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: charVolume
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.size
@@ -4552,15 +4545,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].message
-      value: "Surreal: C\xE1nh c\u1EEDa l\u1EA7n n\xE0y \u1EDF tr\xEAn h\xF2n \u0111\u1EA3o
-        l\u01A1 l\u1EEDng tr\xEAn cao, Broca b\u1EA1n kh\xF4ng th\u1EC3 t\u1EF1 m\xECnh
-        \u0111i \u0111\u01B0\u1EE3c r\u1ED3i, t\xF4i s\u1EBD ch\u1EC9 b\u1EA1n c\xE1ch
-        l\xEAn \u0111\xF3."
+      value: "Surreal: The door this time is on a floating island high above; you
+        can\u2019t get there on your own, Broca \u2014 I\u2019ll guide you up there."
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[1].message
-      value: "Surreal: B\u1EA1n t\xECm c\u1EE5c n\u0103ng l\u01B0\u01A1ng \u0111\u1EB7t
-        v\xE0o c\xE1i b\u1EC7 kia, n\xF3 s\u1EBD gi\xFAp Broca bay l\xEAn \u0111\u1EA3o"
+      value: "Surreal: Find the energy cube and place it on that pedestal \u2014
+        it will help you fly up to the island, Broca."
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].durationAfter

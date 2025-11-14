@@ -1013,6 +1013,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1510916545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7246919610259965226, guid: 2f990b1a14e9277439498b2c2393b457, type: 3}
+  m_PrefabInstance: {fileID: 6803360632374050136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1556364734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1176,7 @@ GameObject:
   - component: {fileID: 1605801832}
   - component: {fileID: 1605801831}
   - component: {fileID: 1605801835}
+  - component: {fileID: 1605801836}
   m_Layer: 0
   m_Name: SmallBox2
   m_TagString: Untagged
@@ -1291,6 +1303,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1605801836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605801830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eccb0694c620b974d94f21e7f4f0ab2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractor
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  bCallbackOnce: 1
+  bTriggeredOnce: 1
+  bTriggered: 0
+  bAppendWord: 1
+  typingSpeed: 0.05
+  uiText: {fileID: 1510916545}
+  Dialogues:
+  - message: Hello
+    durationAfter: 1
+  - message: Test test
+    durationAfter: 1
+  charSound: {fileID: 0}
+  charVolume: 0.6
+  skipSpaces: 1
+  charsPerSound: 1
 --- !u!20 &1836021128 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7662468302679521481, guid: b7411a85328e98e45b96e6296dd82c91, type: 3}

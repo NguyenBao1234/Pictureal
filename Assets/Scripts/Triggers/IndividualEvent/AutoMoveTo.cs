@@ -13,14 +13,31 @@ public class AutoMoveTo : MonoBehaviour
     private void Update()
     {
         if (!bMoving || !TargetTransform) return;
-        
-        transform.position = Vector3.MoveTowards(transform.position, TargetTransform.position, MoveSpeed * Time.deltaTime);
-        
+
+        // --- Rotation follow velocity---
+        Vector3 direction = (TargetTransform.position - transform.position).normalized;
+        if (direction != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * MoveSpeed);
+        }
+
+        // --- moving---
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            TargetTransform.position,
+            MoveSpeed * Time.deltaTime
+        );
+
+        // --- at goal  ---
         if (Vector3.Distance(transform.position, TargetTransform.position) <= StopDistance)
         {
             bMoving = false;
             OnMoveComplete?.Invoke();
             animator.SetBool("Moving", false);
+
+            // Correct rotation
+            transform.rotation = TargetTransform.rotation;
         }
     }
 

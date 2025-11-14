@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+        characterController.height = defaultHeight;
         targetSpeed = walkSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -271,6 +272,7 @@ public class PlayerController : MonoBehaviour
     public void TouchStopRewind() => SetRewind(false);
     private void SetRewind(bool bRewind)
     {
+        if(!bPickedPolaroid) return;
         if (bPausing) return;
         if (rwObj == null) return;
         rwObj.SetRewind(bRewind);

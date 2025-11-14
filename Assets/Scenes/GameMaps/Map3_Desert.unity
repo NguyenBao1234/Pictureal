@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4585b7ac6f824e6429c21ea957623f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockAutoDestroy
-  Message: "M\xECnh s\u1EBD \u0111\u1EE3i kho\u1EA3ng 40 gi\xE2y"
+  Message: I will wait about 40 seconds
   WaitTime: 39
   TextHUD: {fileID: 1641214214}
 --- !u!65 &1645754364
@@ -795,8 +795,137 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.94, y: 3.41, z: 6.27}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 30.2, y: 3.41, z: 30}
+  m_Center: {x: -9.7, y: 0, z: 0}
+--- !u!1 &1778464871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1778464873}
+  - component: {fileID: 1778464872}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1778464872
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778464871}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 14466ee2b30925f47bad23a0caece3e1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1778464873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778464871}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.24, y: 10.73, z: -16.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1856646766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -851,7 +980,7 @@ PrefabInstance:
       objectReference: {fileID: 1479332147}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: charVolume
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.size
@@ -859,20 +988,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].message
-      value: "Surreal: N\xE0y Broca,  t\xF4i v\u1EABn nh\u1EADn ra b\u1EA1n \u1EDF
-        th\u1EBF gi\u1EDBi n\xE0y, c\xF3 v\u1EBB sau khi b\u01B0\u1EDBc qua c\xE1nh
-        c\u1EEDa th\xEC b\u1EA1n v\u1EABn ch\u01B0a th\u1EC3 r\u1EDDi kh\u1ECFi \u0111\xE2y"
+      value: "Surreal: Hey Broca, I can still recognize you in this world. It seems
+        that after passing through the gate, you still haven\u2019t been able to
+        leave this place just yet."
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[1].message
-      value: "Surreal: Th\u1EADt l\xE0 c\xF4 \u0111\u01A1n. T\xF4i s\u1EBD l\xE0m
-        b\u1EA1n v\u1EDBi Broca trong l\xFAc b\u1EA1n t\xECm \u0111\u01B0\u1EDDngnh
-        c\u1EEDa th\xEC b\u1EA1n v\u1EABn ch\u01B0a th\u1EC3 r\u1EDDi kh\u1ECFi \u0111\xE2y"
+      value: "Surreal: It\u2019s so lonely. I\u2019ll be your friend, Broca, while
+        you\u2019re still look for a way out of here."
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[2].message
-      value: "Surreal:  nh\u01B0ng Broca, b\u1EA1n ph\u1EA3i ch\u1ECBu \u1EDF \u0111\xE2y
-        trong 40 gi\xE2y nh\xE9 khi th\u1EA5y c\xE1nh c\u1EEDa nh\xE9"
+      value: "Surreal: But Broca, you\u2019ll have to stay here for 40 seconds when
+        you see the gate, alright?"
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[3].message
@@ -880,35 +1008,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[4].message
-      value: "Surreal:  \u1ED2 b\u1EA1n bi\u1EBFt kh\xF4ng, b\u1EA1n t\xF4i v\u1EEBa
-        r\u1ED3i th\u1EED th\xE1ch 1 d\xE2n t\u1ED9c \u0111i qua sa m\u1EA1c trong
-        su\u1ED1t 40 n\u0103m."
+      value: 'Surreal:  Oh, you know what? My friend once challenged a whole nation,
+        making them wander through the desert for 40 years.'
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[5].message
-      value: "\u0111\u1EC3 th\u1EED th\xE1ch h\u1ECD tr\u01B0\u1EDBc khi ban ph\u01B0\u1EDBc
-        \u0111\xF3"
+      value: 'Surreal: to challenge them before granting that blessing.'
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[6].message
-      value: "Surreal:  s\u1EF1 ki\u1EC7n \u0111\xF3 m\u1EDBi ch\u1EC9 c\xF3 h\u01A1n
-        3300 n\u0103m tr\u01B0\u1EDBc th\xF4i ch\u1EAFc b\u1EA1n c\u0169ng bi\u1EBFt
-        ch\u1EE9"
+      value: "Surreal: That event happened just over 3,300 years ago \u2014 you probably
+        know about it, don\u2019t you?"
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[7].message
-      value: "Surreal:  T\xF4i c\u0169ng mu\u1ED1n l\xE0m \u0111i\u1EC1u t\u01B0\u01A1ng
-        t\u1EF1, t\xF4i \u0111\xE3 th\u1EED th\xE1ch ng\u01B0\u1EDDi Anh \u0111i\xEAng"
+      value: 'Surreal:  I wanted to do the same, I challenged the Indians'
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[8].message
-      value: "Surreal:  nh\u01B0ng ph\u1EA7n l\u1EDBn h\u1ECD th\u1EA5t b\u1EA1i
-        th\u1EED th\xE1ch c\u1EE7a t\xF4i"
+      value: 'Surreal: but most of them failed my test'
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[9].message
-      value: "Surreal: n\xEAn ch\u1EC9 c\xF3 Con \u0111\u01B0\u1EDDng n\u01B0\u1EDBc
-        m\u1EAFt cho h\u1ECD \u0111i."
+      value: 'Surreal: so there is only the Trail of Tears for them'
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].durationAfter
@@ -5231,3 +5353,4 @@ SceneRoots:
   - {fileID: 1333781871}
   - {fileID: 1645754362}
   - {fileID: 605996578}
+  - {fileID: 1778464873}

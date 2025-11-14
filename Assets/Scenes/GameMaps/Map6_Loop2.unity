@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 3f86d4e26ad4d1144bacb2e5e4d7c2a4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -15165,30 +15165,58 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1139982668}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: charVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.size
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].message
-      value: "Surreal: Broca, \u0111\u1EEBng qu\xEAn gi\xFAp t\xF4i nh\xE9"
+      value: 'Surreal: Broca, this is the moment when you can help me.'
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[1].message
-      value: "Surreal: B\u1EA1n h\xE3y \u0111i v\xE0o c\xE1nh c\u1EEDa m\xE0u \u0111\u1ECF
-        \u0111i"
+      value: Surreal:First, go through the red door.
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[2].message
-      value: "Surreal: \u0110\u1EBFn g\u1EA7n c\xE1nh c\u1EEDa s\u1EBD chuy\u1EC3n
-        m\xE0u"
+      value: 'Surreal: The door will change color as you get closer.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: entries.Array.data[3].message
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: entries.Array.data[4].message
+      value: "Surreal: Don\u2019t be afraid, Broca .Trust me"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: entries.Array.data[5].message
+      value: "Surreal: Surreal: Don\u2019t forget how much I\u2019ve helped you,
+        Broca. So why are you still hesitating? Once it\u2019s done, I promise you\u2019ll
+        be able to return to your world."
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[1].durationAfter
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[2].durationAfter
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: entries.Array.data[3].durationAfter
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: entries.Array.data[4].durationAfter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: entries.Array.data[5].durationAfter
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8864056382464516611, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_Name
@@ -15199,6 +15227,135 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+--- !u!1 &2000209208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000209210}
+  - component: {fileID: 2000209209}
+  m_Layer: 0
+  m_Name: Audio Source (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2000209209
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000209208}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 6cb6b4909aec01643b5e1ee5fe79e9a2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2000209210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000209208}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.83, y: -6.32, z: 9.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2045679679
 GameObject:
   m_ObjectHideFlags: 0
@@ -17025,3 +17182,4 @@ SceneRoots:
   - {fileID: 620815706}
   - {fileID: 1420441841}
   - {fileID: 383553330}
+  - {fileID: 2000209210}

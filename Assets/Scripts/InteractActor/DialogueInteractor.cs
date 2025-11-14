@@ -50,7 +50,6 @@ public class DialogueInteractor : MonoBehaviour, IInteractable
     {
         if (uiText != null)
         {
-            uiText.gameObject.SetActive(false);
             uiText.text = "";
         }
     }

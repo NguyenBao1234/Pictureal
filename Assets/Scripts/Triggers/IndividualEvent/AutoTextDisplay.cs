@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AutoTextDisplay : MonoBehaviour
 {
+    [SerializeField] private UnityEvent OnDialogueFinished;
     [Header("UI")]
     public TextMeshProUGUI uiText;
     [Header("Entries")]
@@ -51,7 +53,7 @@ public class AutoTextDisplay : MonoBehaviour
     private IEnumerator PlayMessageCoroutine()
     {
         if (Messages == null || Messages.Count == 0) yield break;
-
+        uiText.gameObject.SetActive(true);
         for (int i = 0; i < Messages.Count; i++)
         {
             var message = Messages[i];
@@ -61,6 +63,7 @@ public class AutoTextDisplay : MonoBehaviour
             
             yield return new WaitForSeconds(message.durationAfter);
         }
+        OnDialogueFinished?.Invoke();
         uiText.text = ""; 
         uiText.gameObject.SetActive(false);
         currentRoutine = null;

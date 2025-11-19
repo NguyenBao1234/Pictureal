@@ -3134,6 +3134,7 @@ GameObject:
   - component: {fileID: 1665251383063131145}
   - component: {fileID: 7717128362113782260}
   - component: {fileID: 4846506890255802571}
+  - component: {fileID: 2516318420038193020}
   m_Layer: 0
   m_Name: HUDCanvas
   m_TagString: Untagged
@@ -3214,6 +3215,21 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &2516318420038193020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775803109673308059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea17778cdb80db468b5624ad709adfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TouchObjectDeleter
+  bEnableTouchInteraction: 0
+  TouchControlName: TouchControl
+  PauseBtnName: PauseBtn
 --- !u!1 &8839959822864769000
 GameObject:
   m_ObjectHideFlags: 0

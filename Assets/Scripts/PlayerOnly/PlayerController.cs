@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
@@ -295,8 +296,9 @@ public class PlayerController : MonoBehaviour
         bPausing = bInPause;
         Cursor.lockState = bInPause ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = bInPause;
-        PauseUI.SetActive(bInPause);
-        joystickInput.transform.parent.gameObject.SetActive(!bInPause);
+        Debug.Log("Pause: " +bInPause);
+        PauseUI?.SetActive(bInPause);
+        if(joystickInput) joystickInput.transform.parent.gameObject.SetActive(!bInPause);
     }
     private void ApplyMovement()
     {

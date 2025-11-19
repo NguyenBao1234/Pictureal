@@ -9,6 +9,7 @@ public class MirrorSeal : MonoBehaviour, IInteractable
     [SerializeField] private Animator ScreenAnimator;
     [SerializeField] private AudioClip SmileSound;
     [SerializeField] private string Message = "You have sealed the camera \nand yourself";
+    [SerializeField] private string LevelToLoad = "MainMenuScene";
     bool bTriggered = false;
     public void Interact(GameObject interactor)
     {
@@ -28,6 +29,6 @@ public class MirrorSeal : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(8f);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene(LevelToLoad);
     }
 }

@@ -68,6 +68,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameMaps/MapGreen9_Hospital.unity
     guid: 9ddab90ef8ee80a43a70b20c6bcc1ff6
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/MapGreen9_Exit.unity
+    guid: ffc5e0332edcbf345acd1896c372adda
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/MapRed1_InsidePictureal.unity
+    guid: 69f16c3a7eaf11c46adf5faaa625e14e
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/MapRed2_Hell.unity
+    guid: 55bbc41204808f640a2ca19bd4f394d0
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/MapRed3_Hell.unity
+    guid: 63308314f78461146a89661bf412e620
+  - enabled: 1
+    path: Assets/Scenes/GameMaps/MapGreen8Nochoice.unity
+    guid: 42668b5e8596ba6479f45735b3c672c8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d4a4e6c1995b717469efb00ef1ee1b0c, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: a22adc6903f095547baddcb45063e8f9, type: 2}

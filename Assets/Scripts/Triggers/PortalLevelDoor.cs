@@ -9,6 +9,7 @@ public class PortalLevelDoor : MonoBehaviour
     public string SceneNameToLoad;
     public Transform DirectionObject;
     public Animator FlashUIAnimator;
+    [SerializeField] private bool bShowMouseCusor = false;
     private GameObject SurrealRoom;
     private void OnEnable()
     {
@@ -68,6 +69,11 @@ public class PortalLevelDoor : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (FlashUIAnimator != null) FlashUIAnimator.SetTrigger("FlashIn");
         yield return new WaitForSeconds(1);
+        if(bShowMouseCusor) 
+        {        
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
         SceneManager.LoadScene(SceneNameToLoad);
     }
 }

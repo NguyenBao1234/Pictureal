@@ -25,6 +25,8 @@ public class SettingsMenuController : BackableUI
     public TextMeshProUGUI resolutionValueLabel;
     private string[] resolutionOptions = { "1280x720", "1920x1080", "2560x1440" };
     private int currentResolutionIndex = 1; // mặc định 1080p
+    [Header("Screen Mode Settings")]
+    public TextMeshProUGUI  screenModeValueLabel;
     
 
     void OnEnable()
@@ -37,6 +39,7 @@ public class SettingsMenuController : BackableUI
         ApplyQuality(); // áp dụng quality mặc định
         ApplyResolution(); // áp dụng res mặc định
         UpdateLabels();
+        UpdateScreenButtonText();
     }
 
     void Update()
@@ -124,7 +127,7 @@ public class SettingsMenuController : BackableUI
         string[] parts = resolutionOptions[currentResolutionIndex].Split('x');
         int width = int.Parse(parts[0]);
         int height = int.Parse(parts[1]);
-        Screen.SetResolution(width, height, FullScreenMode.Windowed);
+        Screen.SetResolution(width, height, FullScreenMode.FullScreenWindow);
         resolutionValueLabel.text = resolutionOptions[currentResolutionIndex];
     }
 
@@ -163,4 +166,15 @@ public class SettingsMenuController : BackableUI
         resolutionValueLabel.text = resolutionOptions[currentResolutionIndex];
     }
     
+    public void ToggleScreenMode()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+        UpdateScreenButtonText();
+    }
+
+    private void UpdateScreenButtonText()
+    {
+        if (Screen.fullScreen) screenModeValueLabel.text = "Full Screen";
+        else screenModeValueLabel.text = "Windowed";
+    }
 }

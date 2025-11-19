@@ -7,8 +7,8 @@ public class PolaroidPickup : MonoBehaviour, IInteractable
         PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.bPickedPolaroid = true;
         player.GetCameraPolaroid().PolaroidCameraModel.SetActive(true);
-        InteractionTouchController touchInteraction = GameObject.FindGameObjectWithTag("TouchInteraction").GetComponent<InteractionTouchController>();
-        touchInteraction.OnPickUpPolaroid();
+        InteractionTouchController touchInteraction = GameObject.FindGameObjectWithTag("TouchInteraction")?.GetComponent<InteractionTouchController>();
+        if(touchInteraction) touchInteraction.OnPickUpPolaroid();
         GameObject.Destroy(gameObject);
     }
 }

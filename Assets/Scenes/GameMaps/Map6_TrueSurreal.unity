@@ -5121,6 +5121,10 @@ PrefabInstance:
       propertyPath: entries.Array.data[0].message
       value: Press E - Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: entries.Array.data[0].durationAfter
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8864056382464516611, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: m_Name
       value: DialogueMessageTrigger
@@ -6627,7 +6631,7 @@ PrefabInstance:
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: charSound
       value: 
-      objectReference: {fileID: 8300000, guid: 8326cb619feecaf47879379e2401bd0b, type: 3}
+      objectReference: {fileID: 8300000, guid: acc600b8cf044ba438b7183bc7474f41, type: 3}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: charVolume
       value: 0.22
@@ -6635,6 +6639,10 @@ PrefabInstance:
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: bAppendWord
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: typingSpeed
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.size
@@ -16345,8 +16353,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
+      propertyPath: typingSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].message
@@ -16383,7 +16395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[0].durationAfter
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[1].durationAfter
@@ -16391,11 +16403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[2].durationAfter
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[3].durationAfter
-      value: 4
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 6985640377685979034, guid: 6b67aa02f478618448fa984240ca8d2e, type: 3}
       propertyPath: entries.Array.data[4].durationAfter

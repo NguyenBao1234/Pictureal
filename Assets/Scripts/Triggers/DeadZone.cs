@@ -10,7 +10,7 @@ public class DeadZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FlashAnimator.SetTrigger("FlashIn");
+            if(FlashAnimator) FlashAnimator.SetTrigger("FlashIn");
             Debug.Log("Player fall into DeadZone! Restart level after " + restartDelay + " s.");
             Invoke(nameof(RestartLevel), restartDelay);
         }

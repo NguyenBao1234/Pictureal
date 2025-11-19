@@ -26673,12 +26673,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a64d4dca506aac45b3640e1d7cd679e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoTextDisplay
+  OnDialogueFinished:
+    m_PersistentCalls:
+      m_Calls: []
   uiText: {fileID: 7654347833106011598}
   Messages:
   - message: Back !!!
     durationAfter: 3
   - message: 
-    durationAfter: 40
+    durationAfter: 66
   - message: 'Hint: The bus was about to leave when it rewinded.'
     durationAfter: 6
   bAppendWord: 1

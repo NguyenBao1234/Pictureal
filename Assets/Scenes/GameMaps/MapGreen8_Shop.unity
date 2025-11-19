@@ -1710,8 +1710,10 @@ MonoBehaviour:
         m_CallState: 2
   uiText: {fileID: 1329224483}
   Messages:
+  - message: 
+    durationAfter: 1.5
   - message: Ring Ring Ring... Beep
-    durationAfter: 0.2
+    durationAfter: 2
   - message: Listen up, if you don't find the money today, I'll send someone to your
       house and clean everything inside
     durationAfter: 5

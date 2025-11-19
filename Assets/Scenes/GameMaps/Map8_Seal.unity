@@ -580,6 +580,7 @@ MonoBehaviour:
   ScreenAnimator: {fileID: 1727695788}
   SmileSound: {fileID: 8300000, guid: 0740c64ff19ff0b4596f7f232610d0f6, type: 3}
   Message: You have sealed the camera \n and yourself
+  LevelToLoad: MapRed1_InsidePictureal
 --- !u!1 &1238072862
 GameObject:
   m_ObjectHideFlags: 0

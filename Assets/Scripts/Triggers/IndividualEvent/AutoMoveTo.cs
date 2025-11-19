@@ -51,6 +51,7 @@ public class AutoMoveTo : MonoBehaviour
         }
 
         bMoving = true;
+        animator.SetBool("Moving", false);
     }
     
     public void SetTarget(Transform newTarget)

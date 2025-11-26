@@ -174,7 +174,7 @@ public class SettingsMenuController : BackableUI
 
     private void UpdateScreenButtonText()
     {
-        if (Screen.fullScreen) screenModeValueLabel.text = "Full Screen";
-        else screenModeValueLabel.text = "Windowed";
+        if (Screen.fullScreen) screenModeValueLabel.text = "Windowed";
+        else screenModeValueLabel.text = "Full screen";
     }
 }

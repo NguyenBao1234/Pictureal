@@ -17142,7 +17142,7 @@ PrefabInstance:
       objectReference: {fileID: 1084458991}
     - target: {fileID: 4820535724099358808, guid: f0a9afa8e9bf38747a52fd4710e65412, type: 3}
       propertyPath: SceneNameToLoad
-      value: Map7_Ending
+      value: Map_Green1_ExitGate
       objectReference: {fileID: 0}
     - target: {fileID: 7887303507391335304, guid: f0a9afa8e9bf38747a52fd4710e65412, type: 3}
       propertyPath: m_Layer

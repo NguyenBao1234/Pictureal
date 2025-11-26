@@ -24176,6 +24176,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: aecbd80b4dda61646bf63ece729e65d8, type: 2}
     - target: {fileID: 8634447705895515451, guid: 303d3ba452d24564c9ef1c70c2ab3772, type: 3}
+      propertyPath: DelayTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634447705895515451, guid: 303d3ba452d24564c9ef1c70c2ab3772, type: 3}
       propertyPath: TrasititionSFX
       value: 
       objectReference: {fileID: 8300000, guid: a0e0a63f38a27324c9c24e73ca05a89e, type: 3}
@@ -24191,9 +24195,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5470533517807065327, guid: 303d3ba452d24564c9ef1c70c2ab3772, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 977964920}
     - targetCorrespondingSourceObject: {fileID: 5470533517807065327, guid: 303d3ba452d24564c9ef1c70c2ab3772, type: 3}
       insertIndex: -1
       addedObject: {fileID: 977964919}
@@ -24225,21 +24226,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &977964920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977964918}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ff5c71f4a22ea4e88f745711d17cfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PortalInteractor
-  SceneNameToLoad: MapGreen6_DiscussRoom
-  FlashUIAnimator: {fileID: 1785578601}
-  TrasititionSFX: {fileID: 8300000, guid: a0e0a63f38a27324c9c24e73ca05a89e, type: 3}
 --- !u!4 &980850275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4100746201267738, guid: ed6e5b1d2f26395489aaa939b5842132, type: 3}

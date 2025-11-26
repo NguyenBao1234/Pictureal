@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 {
     
     [Header("Footstep Settings")]
+    [SerializeField] private float SFXVolume = 0.65f;
     public AudioSource FootstepAudioSource;
     public AudioClip[] footstepClips; // mảng tiếng bước chân
     public float walkStepInterval = 0.5f; // khoảng cách thời gian giữa các bước khi đi
@@ -411,7 +412,7 @@ public class PlayerController : MonoBehaviour
         } while (index == lastIndex && footstepClips.Length > 1);
 
         lastIndex = index;
-        FootstepAudioSource.volume = Random.Range(0.7f, 1);
+        FootstepAudioSource.volume = Random.Range(0.45f, SFXVolume);
         FootstepAudioSource.pitch = Random.Range(0.7f, 1.3f);
         FootstepAudioSource.PlayOneShot(footstepClips[index]);
     }

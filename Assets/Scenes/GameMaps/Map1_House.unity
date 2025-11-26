@@ -8738,10 +8738,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3078101835562558091, guid: c3b74c965a351b54aaf5f56ea84c2292, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 6247407578324761567, guid: de8366e40926e474581f6c826991ba73, type: 3}
     - target: {fileID: 5675093490920047120, guid: c3b74c965a351b54aaf5f56ea84c2292, type: 3}
       propertyPath: m_Name
       value: Picture Frame 2 Static
